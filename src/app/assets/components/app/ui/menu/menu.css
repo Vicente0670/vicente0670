@@ -17,28 +17,52 @@
 .menu:hover {
   border-color: #133789;
 }
+.menu:hover .menu-container .menu-layout .side-links, .menu:hover .menu-container .menu-layout .content {
+  outline-color: #133789;
+}
 .menu .menu-container {
   margin: 1rem;
   height: calc(100% - 5.5rem);
-  width: auto;
+  max-width: 33rem;
+  width: 100%;
 }
 .menu .menu-container .menu-layout {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: flex-start;
   gap: 1rem;
   height: 100%;
-  width: auto;
+  width: 100%;
+  min-width: 0;
 }
 .menu .menu-container .menu-layout .side-links {
+  flex-shrink: 1;
   padding: 0 .5rem;
   height: 100%;
-  width: 4rem;
-  outline: 1px solid #133789;
+  width: 5rem;
+  outline: 1px solid #2a2a2a;
   border-radius: .5rem;
-  overflow: hidden;
+  transition: outline-color .25s;
+  overflow-x: auto;
   overflow-y: auto;
 }
+/* .menu .menu-container .menu-layout .side-links::-webkit-scrollbar {
+  position: absolute;
+  height: .5rem;
+  width: .5rem;
+  border-radius: .25rem;
+}
+.menu .menu-container .menu-layout .side-links::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+  border-radius: .25rem;
+}
+.menu .menu-container .menu-layout .side-links::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+.menu .menu-container .menu-layout .side-links::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+} */
 .menu .menu-container .menu-layout .side-links .side-links-container {
   display: flex;
   flex-direction: column;
@@ -50,36 +74,63 @@
   width: auto;
 }
 .menu .menu-container .menu-layout .side-links .side-links-container div {
+  flex-shrink: 0;
   aspect-ratio: 1;
   height: 4rem;
   width: 4rem;
   background: blue;
 }
 .menu .menu-container .menu-layout .content {
+  flex-grow: 1;
   height: 100%;
-  width: auto;
-  outline: 1px solid #133789;
+  width: 100%;
+  outline: 1px solid #2a2a2a;
   border-radius: .5rem;
+  transition: outline-color .25s;
   overflow: hidden;
   overflow-y: auto;
+  overflow-x: clip;
 }
-@media screen and (max-width: 100rem) {
+/* YouTube Container Specifics */
+.menu .menu-container .menu-layout .content .youtube-container {
+  padding: 1rem;
+  width: calc(100% - 2rem);
+}
+.menu .menu-container .menu-layout .content .youtube-video {
+  margin: 1rem 0;
+  max-width: 100%;
+}
+@media screen and (max-width: 40rem) {
   .menu {
+    max-width: 40rem;
+    width: 100%;
     border: none;
   }
   .menu .menu-container {
-    margin: 0;
+    margin: 1rem 0;
+    height: calc(100% - 5.5rem);
+    max-width: 40rem;
+    width: 100%;
   }
   .menu .menu-container .menu-layout {
     flex-direction: column;
   }
   .menu .menu-container .menu-layout .side-links {
-    height: 6rem;
-    width: auto;
-    overflow: hidden;
-    overflow-x: hidden;
+    flex-shrink: 0;
+    margin: 0 1rem;
+    padding: 0;
+    height: 5rem;
+    width: calc(100% - 2rem);
+    overflow-y: clip;
   }
   .menu .menu-container .menu-layout .side-links .side-links-container {
+    padding: 0;
+    margin: .5rem;
     flex-direction: row;
+    justify-content: flex-start;
+  }
+  .menu .menu-container .menu-layout .content {
+    margin: 0 1rem;
+    width: calc(100% - 2rem);
   }
 }

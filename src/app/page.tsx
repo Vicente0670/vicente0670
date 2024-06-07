@@ -1,7 +1,7 @@
 import app from "./page.module.css";
 import UserAvatar from "./assets/components/user/profile";
 
-export default function Home() {
+export default async function Home() {
   return (
     <main className={app.main}>
       <UserAvatar/>

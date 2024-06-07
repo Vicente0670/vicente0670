@@ -1,5 +1,8 @@
 import "./menu.css";
-export default function Menu() {
+import YouTubeGallery from "../../galleries/youtube/youtube";
+import { getRecentVideos } from "@/lib/getRecentVideos";
+export default async function Menu() {
+  const videos = await getRecentVideos();
   return (
     <>
       <div className="menu">
@@ -24,7 +27,7 @@ export default function Menu() {
               </div>
             </div>
             <div className="content">
-
+              <YouTubeGallery videos={videos}/>
             </div>
           </div>
         </div>

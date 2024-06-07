@@ -134,3 +134,6 @@
 .navigation:has(.feature-container:hover) .navigation-close .close .closeContainer div, .navigation:has(.menu:hover) .navigation-close .close .closeContainer div {
   background: #ddd;
 }
+.navigation:has(.feature-container:hover) .menu .menu-container .menu-layout .side-links, .navigation:has(.feature-container:hover) .menu .menu-container .menu-layout .content, .navigation:has(.navigation-close .close:hover) .menu .menu-container .menu-layout .side-links, .navigation:has(.navigation-close .close:hover) .menu .menu-container .menu-layout .content {
+  outline-color: #133789;
+}
