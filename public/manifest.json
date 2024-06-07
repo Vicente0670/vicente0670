@@ -1,0 +1,32 @@
+{
+    "theme_color": "#416dd2",
+    "background_color": "#416dd2",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/",
+    "name": "Vicente0670.com",
+    "short_name": "Vicente0670",
+    "description": "The Official Vicent0670 App! Discover and engage in the Vicente0670 community.",
+    "icons": [
+        {
+            "src": "/assets/app-icons/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/app-icons/icon-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/app-icons/icon-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/app-icons/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

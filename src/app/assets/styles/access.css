@@ -1,0 +1,82 @@
+/* Authentication Buttons - Access Page */
+
+/* Button Images */
+#google-image {
+  background: url("/assets/icons/google.svg");
+}
+#twitter-image {
+  background: url("/assets/icons/twitter.svg");
+}
+#discord-image {
+  background: url("/assets/icons/discord.svg");
+}
+#github-image {
+  background: url("/assets/icons/github.svg");
+}
+#resend-image {
+  background: url("/assets/icons/resend.svg");
+}
+/* General Input Styling */
+form button {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 1rem;
+  max-width: 16rem;
+  width: 100%;
+  background: #2a2a2a;
+  color: #cccccc;
+}
+form button:hover {
+  background: #606060;
+  color: #dddddd;
+}
+form button:active {
+  background: #545454;
+  color: #cccccc;
+}
+form button:focus-visible {
+  background: #606060;
+  outline: 2px solid #cccccc;
+  color: #dddddd;
+}
+form button div {
+  margin-right: .75rem;
+  aspect-ratio: 1;
+  width: 1.5rem;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: contrast(0) brightness(0) invert(.9);
+}
+#resend-form {
+  margin: 1rem 0;
+}
+#resend-form input {
+  padding: .25rem .5rem;
+  max-width: 15rem;
+  width: 100%;
+  background: #121212;
+  border: none;
+  outline: 2px solid #777;
+  border-radius: .25rem;
+  font-size: 1rem;
+  color: #dddddd;
+  cursor: pointer;
+}
+#resend-form input:hover {
+  outline-color: #999;
+}
+#resend-form input:focus {
+  background: #242424;
+  outline-color: #bbb;
+  cursor: text;
+}
+#access-break {
+  align-items: center;
+  margin: 0 auto;
+  border: none;
+  border-bottom: 2px solid #363636;
+  height: 1rem;
+  width: 75%;
+}

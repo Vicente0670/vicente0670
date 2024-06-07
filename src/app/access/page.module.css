@@ -1,0 +1,163 @@
+/* Access Page */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+}
+.access {
+  position: relative;
+  margin: 1rem 2rem;
+  margin-top: auto;
+  padding: 0 1rem;
+  min-height: 10rem;
+  height: 100%;
+  max-width: 45rem;
+  width: 90%;
+  background: #20202080;
+  outline: 2px solid #363636;
+  border-radius: 1rem;
+  backdrop-filter: blur(1rem);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.access .title {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+  margin-bottom: 1rem;
+}
+.access .title .logo {
+  margin-top: 1.5rem;
+  aspect-ratio: 1;
+  max-width: 6rem;
+  width: 100%;
+  background: url("/assets/icons/profile.webp");
+  background-size: cover;
+  outline: 2px solid #363636;
+  border-radius: 5rem;
+  transform-origin: bottom center;
+  animation: logoIntro 3s ease 1;
+}
+@keyframes logoIntro {
+  0% {
+    transform: translate(0) rotate(0);
+  }
+  25% {
+    transform: translate(0, -15%) rotate(0);
+  }
+  50% {
+    transform: translate(0) rotate(0);
+  }
+  66% {
+    transform: translate(0) rotate(5deg);
+  }
+  80% {
+    transform: translate(0) rotate(-5deg);
+  }
+  100% {
+    transform: none;
+  }
+}
+.access .title .name {
+  text-align: center;
+}
+.access .title .name h4 {
+  letter-spacing: -1px;
+  word-wrap: break-word;
+  animation: letterIntro 1s ease 1;
+}
+@keyframes letterIntro {
+  0% {
+    letter-spacing: 5px;
+    opacity: 0;
+  }
+  100% {
+    letter-spacing: -1px;
+    opacity: 1;
+  }
+}
+.access .title .name p {
+  word-wrap: break-word;
+  animation: paragraphIntro 1s ease 1;
+}
+@keyframes paragraphIntro {
+  0%, 75% {
+    opacity: 0;
+    transform: translate(0, 100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+.access .providers {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .25rem;
+  width: 100%;
+}
+.access .providers form:last-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
+  align-self: center;
+  margin: 3rem 0;
+  gap: .5rem;
+  width: 100%;
+  max-width: none;
+}
+.access .providers form {
+  width: 100%;
+  max-width: 10rem;
+}
+/* Specific Footer for Access Page */
+.accessFooter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  height: 3rem;
+  max-width: 40rem;
+  width: 70%;
+  border-top: 2px solid #242424;
+}
+.accessFooter p, .accessFooter a {
+  font-size: 1rem;
+}
+/* Media Queries */
+@media (prefers-reduced-motion: reduce) {
+  .access .title .logo, .access .title .name h4, .access .title .name p {
+    animation: none;
+  }
+}
+@media screen and (max-width: 34rem) {
+  .access {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background: #121212;
+    outline: none;
+    border-radius: 0;
+  }
+  .access .title {
+    margin: 2rem 1rem;
+  }
+}
+@media screen and (max-width: 19rem) {
+  .access .title .name h4, .access .title .name p {
+    word-break: break-all;
+  }
+  .accessFooter {
+    height: auto;
+  }
+}

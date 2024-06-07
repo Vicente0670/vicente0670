@@ -1,0 +1,136 @@
+/* Navigation Bar */
+.navigation {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 4.5rem;
+  width: 100%;
+  pointer-events: none;
+  z-index: 255;
+}
+.feature-container {
+  position: relative;
+  display: flex;
+  height: 4rem;
+  width: 100%;
+  background: #0a0a0a80;
+  backdrop-filter: blur(.5rem);
+  transition: backdrop-filter .25s, background-color .25s;
+  border-bottom: 1px solid #2a2a2a;
+  transition: border-color .25s;
+  pointer-events: all;
+  z-index: 255;
+}
+.feature-container:hover {
+  border-color: #133789;
+}
+.feature-container .menu-button-container {
+  margin-right: .75rem;
+  padding: .25rem;
+  aspect-ratio: 1;
+  width: 3rem;
+  background: transparent;
+  transition: background-color .25s;
+  cursor: pointer;
+}
+.feature-container .menu-button-container:hover {
+  background: #13378980;
+  transition: none;
+}
+.feature-container .menu-button-container:active {
+  background: #416dd280;
+}
+.feature-container .menu-button-container .menu-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+.feature-container .menu-button-container .menu-button div {
+  position: absolute;
+  height: .1rem;
+  width: 1.5rem;
+  background: #ddd;
+  border-radius: 1rem;
+}
+.feature-container .menu-button-container .menu-button div:nth-child(1) {
+  transform: translate(0, -.4rem) rotate(0);
+}
+.feature-container .menu-button-container .menu-button div:nth-child(2) {
+  transform: translate(0) rotate(0);
+}
+.feature-container .menu-button-container .menu-button div:nth-child(3) {
+  transform: translate(0, .4rem) scaleX(.75) rotate(0);
+  transform-origin: left;
+}
+.feature-container .link-container {
+  display: flex;
+  align-items: center;
+  height: 3.5rem;
+  width: max-content;
+  gap: 1rem;
+}
+.feature-container .link-container a {
+  height: max-content;
+  font-weight: 200;
+}
+.feature-container .link-container a:hover {
+  color: #5783ea;
+}
+.navigation .navigation-close {
+  display: flex;
+  justify-content: flex-end;
+  height: 1rem;
+  width: 100%;
+  pointer-events: none;
+}
+.navigation .navigation-close .close {
+  margin-right: 1rem;
+  height: 1rem;
+  width: 3rem;
+  background: #2a2a2a;
+  clip-path: url(#closeShape);
+  cursor: pointer;
+  pointer-events: all;
+  transition: background-color .25s;
+}
+.navigation .navigation-close .close:hover {
+  background: #133789;
+}
+.navigation .navigation-close .close .closeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  transform: rotate3d(1, 0, 0, 180deg);
+}
+.navigation .navigation-close .close .closeContainer div {
+  position: absolute;
+  height: .125rem;
+  width: .5rem;
+  background: #444;
+  transition: background-color .25s;
+}
+.navigation .navigation-close .close:hover .closeContainer div {
+  background: #ddd;
+}
+.navigation .navigation-close .close .closeContainer div:nth-child(1) {
+  transform: translate(-.13rem, 0) rotate(45deg);
+}
+.navigation .navigation-close .close .closeContainer div:nth-child(2) {
+  transform: translate(.13rem, 0) rotate(-45deg);
+}
+.navigation:has(.feature-container:hover) .navigation-close .close, .navigation:has(.menu:hover) .navigation-close .close {
+  background: #133789;
+}
+.navigation:has(.navigation-close .close:hover) .feature-container, .navigation:has(.menu:hover) .feature-container, .navigation:has(.feature-container:hover) .menu, .navigation:has(.navigation-close .close:hover) .menu {
+  border-color: #133789;
+}
+.navigation:has(.feature-container:hover) .navigation-close .close .closeContainer div, .navigation:has(.menu:hover) .navigation-close .close .closeContainer div {
+  background: #ddd;
+}

@@ -1,0 +1,85 @@
+/* Menu: Goes in tandem with the Header */
+.menu {
+  display: flex;
+  align-items: flex-end;
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  max-width: 35rem;
+  width: 100%;
+  background: #0a0a0a80;
+  border-right: 1px solid #2a2a2a;
+  backdrop-filter: blur(.5rem);
+  transition: border-color .25s, transform .25s;
+  pointer-events: all;
+  z-index: 254;
+}
+.menu:hover {
+  border-color: #133789;
+}
+.menu .menu-container {
+  margin: 1rem;
+  height: calc(100% - 5.5rem);
+  width: auto;
+}
+.menu .menu-container .menu-layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+  height: 100%;
+  width: auto;
+}
+.menu .menu-container .menu-layout .side-links {
+  padding: 0 .5rem;
+  height: 100%;
+  width: 4rem;
+  outline: 1px solid #133789;
+  border-radius: .5rem;
+  overflow: hidden;
+  overflow-y: auto;
+}
+.menu .menu-container .menu-layout .side-links .side-links-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+  padding: .5rem 0;
+  height: auto;
+  width: auto;
+}
+.menu .menu-container .menu-layout .side-links .side-links-container div {
+  aspect-ratio: 1;
+  height: 4rem;
+  width: 4rem;
+  background: blue;
+}
+.menu .menu-container .menu-layout .content {
+  height: 100%;
+  width: auto;
+  outline: 1px solid #133789;
+  border-radius: .5rem;
+  overflow: hidden;
+  overflow-y: auto;
+}
+@media screen and (max-width: 100rem) {
+  .menu {
+    border: none;
+  }
+  .menu .menu-container {
+    margin: 0;
+  }
+  .menu .menu-container .menu-layout {
+    flex-direction: column;
+  }
+  .menu .menu-container .menu-layout .side-links {
+    height: 6rem;
+    width: auto;
+    overflow: hidden;
+    overflow-x: hidden;
+  }
+  .menu .menu-container .menu-layout .side-links .side-links-container {
+    flex-direction: row;
+  }
+}

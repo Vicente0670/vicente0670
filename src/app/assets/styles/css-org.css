@@ -1,0 +1,33 @@
+/* How I usually organize my CSS */
+.example {
+  display: unset; /* Prioritize how it looks... */
+
+  justify-content: unset; /* And align the contents like so... */
+  align-items: unset;
+
+  position: unset; /* Position it somewhere... */
+  margin: unset; /* ...and add whatever the element needs around it... */
+  padding: unset;
+
+  height: unset; /* Now time for the scaling */
+  width: unset;
+
+  background: unset; /* Change its colors */
+
+  border: unset; /* Add the borders and outlines... */
+  outline: unset;
+  border-radius: unset; /* Rounden the edges if necessary... */
+
+  font: unset; /* Text styling! */
+  color: unset;
+  text-decoration: unset;
+
+  transition: unset; /* Fancy it up... */
+  animation: unset;
+
+  scroll-behavior: unset; /* Page related content... */
+  touch-action: unset;
+  appearance: unset;
+  overflow: unset;
+  cursor: unset;
+}
