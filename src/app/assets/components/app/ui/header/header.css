@@ -137,3 +137,17 @@
 .navigation:has(.feature-container:hover) .menu .menu-container .menu-layout .side-links, .navigation:has(.feature-container:hover) .menu .menu-container .menu-layout .content, .navigation:has(.navigation-close .close:hover) .menu .menu-container .menu-layout .side-links, .navigation:has(.navigation-close .close:hover) .menu .menu-container .menu-layout .content {
   outline-color: #133789;
 }
+@media screen and (max-width: 40rem) {
+  .navigation .navigation-close .close:hover {
+    background: #2a2a2a;
+  }
+  .navigation:has(.feature-container:hover) .navigation-close .close, .navigation:has(.menu:hover) .navigation-close .close {
+    background: #2a2a2a;
+  }
+  .navigation:has(.navigation-close .close:hover) .feature-container, .navigation:has(.menu:hover) .feature-container, .navigation:has(.feature-container:hover) .menu, .navigation:has(.navigation-close .close:hover) .menu {
+    border-color: #2a2a2a;
+  }
+  .navigation:has(.feature-container:hover) .menu .menu-container .menu-layout .side-links, .navigation:has(.feature-container:hover) .menu .menu-container .menu-layout .content, .navigation:has(.navigation-close .close:hover) .menu .menu-container .menu-layout .side-links, .navigation:has(.navigation-close .close:hover) .menu .menu-container .menu-layout .content {
+    outline-color: #2a2a2a;
+  }
+}
