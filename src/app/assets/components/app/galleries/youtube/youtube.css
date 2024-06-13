@@ -12,3 +12,18 @@
   width: 100%;
   max-width: 30rem;
 }
+.youtube-thumbnail-container {
+  aspect-ratio: 16/9;
+  width: 100%;
+  background: red;
+  overflow: hidden;
+}
+.youtube-thumbnail {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.youtube-caption {
+  font-size: 1rem;
+}
