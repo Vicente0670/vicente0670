@@ -7,24 +7,24 @@
   height: 100vh;
   max-width: 35rem;
   width: 100%;
-  /* background: #0a0a0a80;
-  border-right: 1px solid #2a2a2a;
-  backdrop-filter: blur(.5rem); */
-  transition: border-color .25s, transform .25s;
   pointer-events: all;
   z-index: 254;
 }
-.menu:hover {
+.menu .menu-container:hover {
   border-color: #133789;
 }
 .menu:hover .menu-container .menu-layout .side-links, .menu:hover .menu-container .menu-layout .content {
   outline-color: #133789;
 }
 .menu .menu-container {
-  margin: 1rem;
+  padding: 1rem;
   height: calc(100% - 5.5rem);
   max-width: 33rem;
   width: 100%;
+  background: #0a0a0a80;
+  border-right: 1px solid #2a2a2a;
+  backdrop-filter: blur(.5rem);
+  transition: border-color .25s, transform .25s;
 }
 .menu .menu-container .menu-layout {
   display: flex;
@@ -135,14 +135,15 @@
     width: 100%;
     border: none;
   }
-  .menu:hover {
-    border-color: #2a2a2a;
-  }
   .menu .menu-container {
-    margin: 1rem 0;
+    padding: 1rem 0;
     height: calc(100% - 5.5rem);
     max-width: 40rem;
     width: 100%;
+    background: #0a0a0a80;
+    border-right: none;
+    backdrop-filter: blur(.5rem);
+    transition: border-color .25s, transform .25s;
   }
   .menu .menu-container .menu-layout {
     flex-direction: column;

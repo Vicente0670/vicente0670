@@ -14,10 +14,10 @@
   display: flex;
   height: 4rem;
   width: 100%;
-  /* background: #0a0a0a80;
+  background: #0a0a0a80;
   backdrop-filter: blur(.5rem);
   transition: backdrop-filter .25s, background-color .25s;
-  border-bottom: 1px solid #2a2a2a; */
+  border-bottom: 1px solid #2a2a2a;
   transition: border-color .25s;
   pointer-events: all;
   z-index: 255;
@@ -125,10 +125,10 @@
 .navigation .navigation-close .close .closeContainer div:nth-child(2) {
   transform: translate(.13rem, 0) rotate(-45deg);
 }
-.navigation:has(.feature-container:hover) .navigation-close .close, .navigation:has(.menu:hover) .navigation-close .close {
+.navigation:has(.feature-container:hover) .navigation-close .close, .navigation:has(.menu .menu:hover) .navigation-close .close {
   background: #133789;
 }
-.navigation:has(.navigation-close .close:hover) .feature-container, .navigation:has(.menu:hover) .feature-container, .navigation:has(.feature-container:hover) .menu, .navigation:has(.navigation-close .close:hover) .menu {
+.navigation:has(.navigation-close .close:hover) .feature-container, .navigation:has(.menu:hover) .feature-container, .navigation:has(.feature-container:hover) .menu .menu-container, .navigation:has(.navigation-close .close:hover) .menu .menu-container {
   border-color: #133789;
 }
 .navigation:has(.feature-container:hover) .navigation-close .close .closeContainer div, .navigation:has(.menu:hover) .navigation-close .close .closeContainer div {
