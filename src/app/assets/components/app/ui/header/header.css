@@ -125,7 +125,7 @@
 .navigation .navigation-close .close .closeContainer div:nth-child(2) {
   transform: translate(.13rem, 0) rotate(-45deg);
 }
-.navigation:has(.feature-container:hover) .navigation-close .close, .navigation:has(.menu .menu:hover) .navigation-close .close {
+.navigation:has(.feature-container:hover) .navigation-close .close, .navigation:has(.menu:hover) .navigation-close .close {
   background: #133789;
 }
 .navigation:has(.navigation-close .close:hover) .feature-container, .navigation:has(.menu:hover) .feature-container, .navigation:has(.feature-container:hover) .menu .menu-container, .navigation:has(.navigation-close .close:hover) .menu .menu-container {

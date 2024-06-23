@@ -133,17 +133,20 @@
   .menu {
     max-width: 40rem;
     width: 100%;
+    background: #121212;
     border: none;
+  }
+  .menu:hover {
+    border-color: #2a2a2a;
   }
   .menu .menu-container {
     padding: 1rem 0;
     height: calc(100% - 5.5rem);
     max-width: 40rem;
     width: 100%;
-    background: #0a0a0a80;
+    background: #121212;
     border-right: none;
-    backdrop-filter: blur(.5rem);
-    transition: border-color .25s, transform .25s;
+    backdrop-filter: blur(0);
   }
   .menu .menu-container .menu-layout {
     flex-direction: column;
