@@ -8,6 +8,7 @@
   max-width: 35rem;
   width: 100%;
   transform: translate(-100%, 0);
+  transition: transform .25s cubic-bezier(.2, .8, .5, .9);
   pointer-events: all;
   z-index: 254;
 }
