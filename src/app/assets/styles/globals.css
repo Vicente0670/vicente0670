@@ -21,7 +21,7 @@ a::selection {
   text-decoration: underline;
 }
 a:hover::selection {
-  color: #eee;
+  color: #eef7ff;
 }
 html, body {
   background: #0a0a0a;
@@ -32,7 +32,7 @@ h1, h2, h3, h4, h5, h6, p, a {
   font-family: "Noto Sans", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 h1, h2, h3, h4, h5, h6 {
-  color: #eee;
+  color: #eef7ff;
 }
 h1 {
   font-size: 5rem;
@@ -66,16 +66,16 @@ p {
 /* Selectables */
 a {
   font: 1.25rem "Noto Sans", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  color: #ddd;
+  color: #d8ecff;
   text-decoration: none;
   transition: color .125s;
 }
 a:hover {
-  color: #fff;
+  color: #eef7ff;
   transition: none;
 }
 a:active {
-  color: #ccc;
+  color: #b9ddff;
 }
 a:focus-visible {
   outline: 2px solid #7292f3;

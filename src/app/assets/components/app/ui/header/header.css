@@ -1,3 +1,7 @@
+:root {
+  --close-arrow: #1141bc;
+  --close-arrow-hover: #b9ddff;
+}
 /* Navigation Bar */
 .navigation {
   display: flex;
@@ -17,7 +21,7 @@
   background: #0a0a0a80;
   backdrop-filter: blur(.5rem);
   transition: backdrop-filter .25s, background-color .25s;
-  border-bottom: 1px solid #2a2a2a;
+  border-bottom: 1px solid #122559;
   transition: border-color .25s;
   pointer-events: all;
   z-index: 255;
@@ -78,7 +82,10 @@
   font-weight: 200;
 }
 .feature-container .link-container a:hover {
-  color: #5783ea;
+  color: #52acff;
+}
+.feature-container .link-container a:active {
+  color: #2a88ff;
 }
 .navigation .navigation-close {
   display: flex;
@@ -91,7 +98,7 @@
   margin-right: 1rem;
   height: 1rem;
   width: 3rem;
-  background: #2a2a2a;
+  background: #122559;
   clip-path: url(#closeShape);
   cursor: pointer;
   pointer-events: all;
@@ -113,11 +120,11 @@
   position: absolute;
   height: .125rem;
   width: .5rem;
-  background: #444;
+  background: var(--close-arrow);
   transition: background-color .25s;
 }
 .navigation .navigation-close .close:hover .closeContainer div {
-  background: #ddd;
+  background: var(--close-arrow-hover);
 }
 .navigation .navigation-close .close .closeContainer div:nth-child(1) {
   transform: translate(-.13rem, 0) rotate(45deg);
@@ -132,22 +139,22 @@
   border-color: #133789;
 }
 .navigation:has(.feature-container:hover) .navigation-close .close .closeContainer div, .navigation:has(.menu:hover) .navigation-close .close .closeContainer div {
-  background: #ddd;
+  background: var(--close-arrow-hover);
 }
 .navigation:has(.feature-container:hover) .menu .menu-container .menu-layout .side-links, .navigation:has(.feature-container:hover) .menu .menu-container .menu-layout .content, .navigation:has(.navigation-close .close:hover) .menu .menu-container .menu-layout .side-links, .navigation:has(.navigation-close .close:hover) .menu .menu-container .menu-layout .content {
   outline-color: #133789;
 }
 @media screen and (max-width: 40rem) {
   .navigation .navigation-close .close:hover {
-    background: #2a2a2a;
+    background: #122559;
   }
   .navigation:has(.feature-container:hover) .navigation-close .close, .navigation:has(.menu:hover) .navigation-close .close {
-    background: #2a2a2a;
+    background: #122559;
   }
   .navigation:has(.navigation-close .close:hover) .feature-container, .navigation:has(.menu:hover) .feature-container, .navigation:has(.feature-container:hover) .menu, .navigation:has(.navigation-close .close:hover) .menu {
-    border-color: #2a2a2a;
+    border-color: #122559;
   }
   .navigation:has(.feature-container:hover) .menu .menu-container .menu-layout .side-links, .navigation:has(.feature-container:hover) .menu .menu-container .menu-layout .content, .navigation:has(.navigation-close .close:hover) .menu .menu-container .menu-layout .side-links, .navigation:has(.navigation-close .close:hover) .menu .menu-container .menu-layout .content {
-    outline-color: #2a2a2a;
+    outline-color: #122559;
   }
 }

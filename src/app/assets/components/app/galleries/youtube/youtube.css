@@ -1,3 +1,10 @@
+.youtube-container-title {
+  padding: .5rem 0;
+  width: 100%;
+  background: #122559;
+  border-radius: .5rem;
+  text-align: center;
+}
 .youtube-container {
   display: flex;
   flex-wrap: wrap;
@@ -7,15 +14,36 @@
 }
 .youtube-video {
   display: flex;
+  gap: .5rem;
   flex-direction: column;
   justify-content: center;
+  padding: 1rem;
   width: 100%;
   max-width: 30rem;
+  background: #122559;
+  border-radius: .5rem;
+  transition: background-color .25s;
+  cursor: pointer;
+}
+.youtube-video:hover {
+  background: #133789;
+  transition: none;
+}
+.youtube-video:hover .youtube-thumbnail-container .youtube-thumbnail {
+  transform: scale(105%);
+  transition: none;
+}
+.youtube-video:active {
+  background: #133789;
+}
+.youtube-video:active .youtube-thumbnail-container .youtube-thumbnail {
+  transform: scale(102.5%);
 }
 .youtube-thumbnail-container {
   aspect-ratio: 16/9;
   width: 100%;
-  background: red;
+  background: #2a2a2a;
+  border-radius: .5rem;
   overflow: hidden;
 }
 .youtube-thumbnail {
@@ -23,4 +51,5 @@
   width: 100%;
   object-fit: cover;
   object-position: center;
+  transition: transform .25s;
 }

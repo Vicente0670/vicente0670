@@ -1,8 +1,8 @@
+import Script from "next/script";
 import "@/app/assets/styles/globals.css";
 import Banner from "./assets/components/app/ui/banner/banner";
 import Header from "./assets/components/app/ui/header/header";
 import Footer from "./assets/components/app/page/footer/footer";
-import Script from "next/script";
 
 export default function Application({
   children,
@@ -31,6 +31,7 @@ export default function Application({
         <meta property="og:image" content="/favicon.ico"/>
         <meta name="description" property="og:description" content="This page contains basic information, and as such does not have a proper layout."/>
         <meta name="twitter:card" content="summary_large_image"/>
+        <Script src="/assets/scripts/header.js" strategy="beforeInteractive" />
       </head>
       <body>
         <Banner/>

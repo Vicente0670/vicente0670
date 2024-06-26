@@ -22,7 +22,7 @@
   max-width: 33rem;
   width: 100%;
   background: #0a0a0a80;
-  border-right: 1px solid #2a2a2a;
+  border-right: 1px solid #122559;
   backdrop-filter: blur(.5rem);
   transition: border-color .25s, transform .25s;
 }
@@ -43,7 +43,7 @@
   max-width: 4.5rem;
   min-width: 4rem;
   width: 100%;
-  outline: 1px solid #2a2a2a;
+  outline: 1px solid #122559;
   border-radius: .5rem;
   transition: outline-color .25s;
   overflow-x: auto;
@@ -58,17 +58,17 @@
   border-bottom-right-radius: 1rem;
 }
 .menu .menu-container .menu-layout .side-links::-webkit-scrollbar-track {
-  background: #2a2a2a;
+  background: #122559;
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
 }
 .menu .menu-container .menu-layout .side-links::-webkit-scrollbar-thumb {
-  background: #133789;
+  background: #1141bc;
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
 }
 .menu .menu-container .menu-layout .side-links::-webkit-scrollbar-thumb:hover {
-  background: #1e4bb5;
+  background: #0c50e9;
 }
 .menu .menu-container .menu-layout .side-links .side-links-container {
   display: flex;
@@ -85,13 +85,13 @@
   aspect-ratio: 1;
   height: 4rem;
   width: 4rem;
-  background: blue;
+  background: #1141bc80;
 }
 .menu .menu-container .menu-layout .content {
   flex-grow: 1;
   height: 100%;
   width: 100%;
-  outline: 1px solid #2a2a2a;
+  outline: 1px solid #122559;
   border-radius: .5rem;
   transition: outline-color .25s;
   overflow: hidden;
@@ -107,23 +107,23 @@
   overflow-y: clip;
 }
 .menu .menu-container .menu-layout .content::-webkit-scrollbar-track {
-  background: #2a2a2a;
+  background: #122559;
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
 }
 .menu .menu-container .menu-layout .content::-webkit-scrollbar-thumb {
   width: 1rem;
-  background: #133789;
+  background: #1141bc;
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
 }
 .menu .menu-container .menu-layout .content::-webkit-scrollbar-thumb:hover {
-  background: #1e4bb5;
+  background: #0c50e9;
 }
 /* YouTube Container Specifics */
 .menu .menu-container .menu-layout .content .youtube-container {
   gap: 1rem;
-  padding: 1rem;
+  padding: 0 1rem;
   width: calc(100% - 2rem);
 }
 .menu .menu-container .menu-layout .content .youtube-video {
@@ -137,7 +137,7 @@
     border: none;
   }
   .menu:hover {
-    border-color: #2a2a2a;
+    border-color: #122559;
   }
   .menu .menu-container {
     padding: 1rem 0;
@@ -152,7 +152,7 @@
     flex-direction: column;
   }
   .menu:hover .menu-container .menu-layout .side-links, .menu:hover .menu-container .menu-layout .content {
-    outline-color: #2a2a2a;
+    outline-color: #122559;
   }
   .menu .menu-container .menu-layout .side-links::-webkit-scrollbar, .menu .menu-container .menu-layout .content::-webkit-scrollbar {
     height: 0;
