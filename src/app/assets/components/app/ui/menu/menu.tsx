@@ -5,7 +5,7 @@ export default async function Menu() {
   const videos = await getRecentVideos();
   return (
     <>
-      <div className="menu">
+      <div className="menu" id="menu">
         <div className="menu-container">
           <div className="menu-layout">
             <div className="side-links">

@@ -1,6 +1,17 @@
+var menu = document.getElementById("menu");
 var menuButton = document.getElementById("menu-button");
-menuButton.addEventListener("click", newFunction);
+menuButton.addEventListener("click", toggleMenu);
+var isMenuOpen = false;
 
-function newFunction() {
-  window.alert("You have opened the Menu!");
+function toggleMenu() {
+  if (isMenuOpen === true) {
+    menu.style.transform = "translate(-100%, 0)";
+    isMenuOpen = false;
+    return;
+  }
+  if (isMenuOpen === false) {
+    menu.style.transform = "translate(0)";
+    isMenuOpen = true;
+    return;
+  }
 }

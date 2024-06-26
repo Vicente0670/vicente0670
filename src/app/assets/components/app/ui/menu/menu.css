@@ -7,6 +7,7 @@
   height: 100vh;
   max-width: 35rem;
   width: 100%;
+  transform: translate(-100%, 0);
   pointer-events: all;
   z-index: 254;
 }
