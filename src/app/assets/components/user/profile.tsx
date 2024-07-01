@@ -16,12 +16,12 @@ export default async function UserAvatar() {
 
   return (
     <>
-      <div>
+      <div className="personal-profile-container">
         <Image
           src={session.user.image ?? ""}
           alt="User Avatar"
-          height={400}
-          width={400}
+          height={512}
+          width={512}
         />
         <p>{userEmailPrompt}</p>
         <p>Name: &apos;{session.user.name}&apos;</p>

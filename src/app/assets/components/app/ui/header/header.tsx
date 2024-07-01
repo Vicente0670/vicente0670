@@ -1,5 +1,6 @@
 import "./header.css";
 import Menu from "../menu/menu";
+import SignInProfile from "../signin/signin";
 export default function Header() {
   return (
     <>
@@ -27,6 +28,9 @@ export default function Header() {
             <a href="/">Videos</a>
             <a href="/">Forum</a>
             <a href="/">Blog</a>
+          </div>
+          <div className="signin-container">
+            <SignInProfile/>
           </div>
         </div>
         <div className="navigation-close">

@@ -87,6 +87,41 @@
 .feature-container .link-container a:active {
   color: #2a88ff;
 }
+.signin-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  margin-right: 1rem;
+  height: 100%;
+  width: max-content;
+}
+.signin-container .access {
+  margin: auto 0;
+  padding: .5rem 1rem;
+  height: max-content;
+  border-radius: .25rem;
+  background: #122559;
+  font-weight: 300;
+  color: #cdcdcd;
+  transition: background-color .25s, color .25s, filter .25s;
+}
+.signin-container .access:hover {
+  background: #133789;
+  color: #ddd;
+  transition: none;
+}
+.signin-container .access:active {
+  background: #1141bc;
+  color: #eee;
+  transition: none;
+}
+.signin-container .access:focus-visible {
+  background: #133789;
+  outline: 2px solid #52acff;
+  color: #ddd;
+  transition: none;
+  animation: none;
+}
 .navigation .navigation-close {
   display: flex;
   justify-content: flex-end;
