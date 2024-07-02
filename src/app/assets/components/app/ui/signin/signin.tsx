@@ -1,5 +1,6 @@
 import {auth} from "@/auth";
 import Image from "next/image";
+
 export default async function SignInProfile() {
   const session = await auth();
   if (!session?.user) return (
@@ -19,4 +20,4 @@ export default async function SignInProfile() {
       />
     </>
   )
-}
+} // I'm just going to do something similar to youtube. ive had it with this
