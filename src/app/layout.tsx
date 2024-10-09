@@ -1,10 +1,9 @@
 import Script from "next/script";
 import "@/app/assets/styles/globals.css";
-import Banner from "./assets/components/app/ui/banner/banner";
-import Header from "./assets/components/app/ui/header/header";
-import Footer from "./assets/components/app/page/footer/footer";
+import GlobalHeader from "./assets/components/app/ui/header/header";
+import Footer from "./assets/components/app/ui/footer/footer";
 
-export default function Application({
+export default function RootApplicationLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -34,9 +33,8 @@ export default function Application({
         <Script src="/assets/scripts/header.js" strategy="beforeInteractive" />
       </head>
       <body>
-        <Banner/>
-        <Header/>
-        {children}
+        <GlobalHeader/>
+          {children}
         <Footer/>
       </body>
     </html>

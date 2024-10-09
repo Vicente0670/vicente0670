@@ -1,45 +1,23 @@
 import "./header.css";
-import Menu from "../menu/menu";
-import SignInProfile from "../signin/signin";
-export default function Header() {
+import HeaderProfile from "./profile/profile";
+
+export default function GlobalHeader() {
   return (
     <>
       <nav className="navigation">
-        <svg width="0" height="0">
-          <defs>
-            <clipPath id="closeShape" clipPathUnits="objectBoundingBox">
-              <path
-                d="M 0 0 L 1 0 Q 0.825 0 0.825 0.5 Q 0.825 1 0.66 1 L 0.33 1 Q 0.185 1 0.185 0.5 Q 0.185 0 0 0 Z"
-              />
-            </clipPath>
-          </defs>
-        </svg>
-        <Menu/>
-        <div className="feature-container">
-          <div className="menu-button-container" id="menu-button">
-            <div className="menu-button">
+        <div className="container">
+          <div className="menu-toggle-container">
+            <div className="menu-toggle">
               <div></div>
               <div></div>
               <div></div>
             </div>
           </div>
-          <div className="link-container">
-            <a href="/">Home</a>
-            <a href="/">Videos</a>
-            <a href="/">Forum</a>
-            <a href="/">Blog</a>
+          <div className="brand-container">
+            <div className="brand-logo"></div>
+            <h6>Vicente0670</h6>
           </div>
-          <div className="signin-container">
-            <SignInProfile/>
-          </div>
-        </div>
-        <div className="navigation-close">
-          <div className="close">
-            <div className="closeContainer">
-              <div></div>
-              <div></div>
-            </div>
-          </div>
+          <HeaderProfile/>
         </div>
       </nav>
     </>

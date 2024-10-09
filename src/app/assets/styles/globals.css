@@ -13,7 +13,7 @@
   touch-action: manipulation;
 }
 *::selection {
-  background: #fcff3caa;
+  background: #fdff6dcc;
   color: #121212;
 }
 a::selection {

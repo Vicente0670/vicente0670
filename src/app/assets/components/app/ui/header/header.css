@@ -1,195 +1,75 @@
-:root {
-  --close-arrow: #1141bc;
-  --close-arrow-hover: #b9ddff;
-}
-/* Navigation Bar */
+/* Core Header Components */
 .navigation {
-  display: flex;
-  flex-direction: column;
-  position: sticky;
-  top: 0;
-  height: 4.5rem;
+  position: fixed;
+  height: 3.5rem;
   width: 100%;
-  pointer-events: none;
+  background: #00000080;
+  border-bottom: 1px solid #133789;
+  border-image: linear-gradient(to right, #133789, #830791) 100;
+  backdrop-filter: blur(.25rem);
   z-index: 255;
 }
-.feature-container {
-  position: relative;
+.navigation .container {
   display: flex;
-  height: 4rem;
-  width: 100%;
-  background: #0a0a0a80;
-  backdrop-filter: blur(.5rem);
-  transition: backdrop-filter .25s, background-color .25s;
-  border-bottom: 1px solid #122559;
-  transition: border-color .25s;
-  pointer-events: all;
-  z-index: 255;
-}
-.feature-container:hover {
-  border-color: #133789;
-}
-.feature-container .menu-button-container {
-  margin-right: .75rem;
-  padding: .25rem;
-  aspect-ratio: 1;
-  width: 3rem;
-  background: transparent;
-  transition: background-color .25s;
-  cursor: pointer;
-}
-.feature-container .menu-button-container:hover {
-  background: #13378980;
-  transition: none;
-}
-.feature-container .menu-button-container:active {
-  background: #416dd280;
-}
-.feature-container .menu-button-container .menu-button {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
   height: 100%;
   width: 100%;
 }
-.feature-container .menu-button-container .menu-button div {
-  position: absolute;
+/* Menu Toggle Button */
+.navigation .container .menu-toggle-container {
+  height: 3.5rem;
+  width: 3.5rem;
+}
+.navigation .container .menu-toggle-container .menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: .25rem;
+  padding: 1rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  background: #00000000;
+  transition: background-color .25s ease;
+  cursor: pointer;
+}
+.navigation .container .menu-toggle-container .menu-toggle:hover {
+  background: #133789aa;
+  transition: none;
+}
+.navigation .container .menu-toggle-container .menu-toggle:active {
+  background: #13378960;
+}
+.navigation .container .menu-toggle-container .menu-toggle div {
   height: .1rem;
   width: 1.5rem;
-  background: #ddd;
-  border-radius: 1rem;
+  background: #cdcdcd;
+  border-radius: .5rem;
 }
-.feature-container .menu-button-container .menu-button div:nth-child(1) {
-  transform: translate(0, -.4rem) rotate(0);
+.navigation .container .menu-toggle-container .menu-toggle div:last-child {
+  width: 1rem;
 }
-.feature-container .menu-button-container .menu-button div:nth-child(2) {
-  transform: translate(0) rotate(0);
-}
-.feature-container .menu-button-container .menu-button div:nth-child(3) {
-  transform: translate(0, .4rem) scaleX(.75) rotate(0);
-  transform-origin: left;
-}
-.feature-container .link-container {
+/* Header Brand Logo */
+.navigation .container .brand-container {
   display: flex;
   align-items: center;
-  height: 3.5rem;
-  width: max-content;
-  gap: 1rem;
-}
-.feature-container .link-container a {
-  height: max-content;
-  font-weight: 200;
-}
-.feature-container .link-container a:hover {
-  color: #52acff;
-}
-.feature-container .link-container a:active {
-  color: #2a88ff;
-}
-.signin-container {
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
-  margin-right: 1rem;
+  gap: .5rem;
+  margin: 0 .5rem;
   height: 100%;
-  width: max-content;
+  width: auto;
 }
-.signin-container .access {
-  margin: auto 0;
-  padding: .5rem 1rem;
-  height: max-content;
-  border-radius: .25rem;
-  background: #122559;
-  font-weight: 300;
-  color: #cdcdcd;
-  transition: background-color .25s, color .25s, filter .25s;
+.navigation .container .brand-container .brand-logo {
+  aspect-ratio: 1;
+  margin: auto;
+  width: 2.25rem;
+  background-color: #133789;
+  background-image: url("/assets/app-icons/icon-256x256.png");
+  background-size: contain;
+  border-radius: 1.5rem;
 }
-.signin-container .access:hover {
-  background: #133789;
-  color: #ddd;
-  transition: none;
+.navigation .container .brand-container h6 {
+  background-image: linear-gradient(90deg, #2a88ff, #ea22ff);
+  background-clip: text;
+  color: transparent;
 }
-.signin-container .access:active {
-  background: #1141bc;
-  color: #eee;
-  transition: none;
-}
-.signin-container .access:focus-visible {
-  background: #133789;
-  outline: 2px solid #52acff;
-  color: #ddd;
-  transition: none;
-  animation: none;
-}
-.navigation .navigation-close {
-  display: flex;
-  justify-content: flex-end;
-  height: 1rem;
-  width: 100%;
-  pointer-events: none;
-}
-.navigation .navigation-close .close {
-  margin-right: 1rem;
-  height: 1rem;
-  width: 3rem;
-  background: #122559;
-  clip-path: url(#closeShape);
-  cursor: pointer;
-  pointer-events: all;
-  transition: background-color .25s;
-}
-.navigation .navigation-close .close:hover {
-  background: #133789;
-}
-.navigation .navigation-close .close .closeContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-  transform: rotate3d(1, 0, 0, 180deg);
-}
-.navigation .navigation-close .close .closeContainer div {
-  position: absolute;
-  height: .125rem;
-  width: .5rem;
-  background: var(--close-arrow);
-  transition: background-color .25s;
-}
-.navigation .navigation-close .close:hover .closeContainer div {
-  background: var(--close-arrow-hover);
-}
-.navigation .navigation-close .close .closeContainer div:nth-child(1) {
-  transform: translate(-.13rem, 0) rotate(45deg);
-}
-.navigation .navigation-close .close .closeContainer div:nth-child(2) {
-  transform: translate(.13rem, 0) rotate(-45deg);
-}
-.navigation:has(.feature-container:hover) .navigation-close .close, .navigation:has(.menu:hover) .navigation-close .close {
-  background: #133789;
-}
-.navigation:has(.navigation-close .close:hover) .feature-container, .navigation:has(.menu:hover) .feature-container, .navigation:has(.feature-container:hover) .menu .menu-container, .navigation:has(.navigation-close .close:hover) .menu .menu-container {
-  border-color: #133789;
-}
-.navigation:has(.feature-container:hover) .navigation-close .close .closeContainer div, .navigation:has(.menu:hover) .navigation-close .close .closeContainer div {
-  background: var(--close-arrow-hover);
-}
-.navigation:has(.feature-container:hover) .menu .menu-container .menu-layout .side-links, .navigation:has(.feature-container:hover) .menu .menu-container .menu-layout .content, .navigation:has(.navigation-close .close:hover) .menu .menu-container .menu-layout .side-links, .navigation:has(.navigation-close .close:hover) .menu .menu-container .menu-layout .content {
-  outline-color: #133789;
-}
-@media screen and (max-width: 40rem) {
-  .navigation .navigation-close .close:hover {
-    background: #122559;
-  }
-  .navigation:has(.feature-container:hover) .navigation-close .close, .navigation:has(.menu:hover) .navigation-close .close {
-    background: #122559;
-  }
-  .navigation:has(.navigation-close .close:hover) .feature-container, .navigation:has(.menu:hover) .feature-container, .navigation:has(.feature-container:hover) .menu, .navigation:has(.navigation-close .close:hover) .menu {
-    border-color: #122559;
-  }
-  .navigation:has(.feature-container:hover) .menu .menu-container .menu-layout .side-links, .navigation:has(.feature-container:hover) .menu .menu-container .menu-layout .content, .navigation:has(.navigation-close .close:hover) .menu .menu-container .menu-layout .side-links, .navigation:has(.navigation-close .close:hover) .menu .menu-container .menu-layout .content {
-    outline-color: #122559;
-  }
-}
+/* Sign In Button */
+/* Make a simple side bar similar to Youtube. make sure it has icons and even a short little recent videos tab where users can quickly see the recent videos. also make a mobile specific bar at the bottom for mobile users */

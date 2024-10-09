@@ -21,6 +21,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/assets/components/app/galleries/youtube/youtube.ts", "src/app/assets/components/app/galleries/youtube/youtube.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/assets/components/app/galleries/youtube/youtube.ts", "src/app/assets/components/app/galleries/youtube/youtube.js", "src/app/access/layout.jsx", "src/app/access/page.tsx", "src/app/access/page.tsx", "src/app/assets/components/app/globe/globe.js"],
   "exclude": ["node_modules"]
 }

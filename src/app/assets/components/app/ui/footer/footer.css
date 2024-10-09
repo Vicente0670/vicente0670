@@ -1,0 +1,8 @@
+/* Universal Footer */
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+}

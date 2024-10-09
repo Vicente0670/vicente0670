@@ -1,6 +1,7 @@
 import app from "./page.module.css";
 import "@/app/assets/styles/access.css";
 import SignIn from "@/app/assets/components/user/signin";
+import Script from "next/script";
 import {auth} from "@/auth";
 import {permanentRedirect} from "next/navigation";
 
@@ -10,10 +11,11 @@ export default async function Access() {
   return (
     <>
       <main>
+        <Script src="/assets/scripts/app/globe/globe.js" />
         <div className={app.container}>
           <div className={app.access}>
             <div className={app.title}>
-              <div className={app.logo}></div>
+              <div className={app.logo}/>
               <div className={app.name}>
                 <h4>Access Vicente0670.com</h4>
                 <p>Use a provided method to access and explore the app&apos;s features.</p>

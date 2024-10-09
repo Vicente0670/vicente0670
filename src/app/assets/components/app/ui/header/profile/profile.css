@@ -1,0 +1,70 @@
+:root {
+  --rgb-1: #f22828;
+  --rgb-2: #f2de28;
+  --rgb-3: #28f243;
+  --rgb-4: #28c6f2;
+  --rgb-5: #3228f2;
+  --rgb-6: #a528f2;
+}
+/* Sign In Container (Basic Layout) */
+.signInContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-right: 1rem;
+  height: 100%;
+  width: auto;
+}
+/* Sign In Button (No Login) */
+.signInButton {
+  text-decoration-skip-ink: auto; /* just a filler */
+}
+.signInButton a {
+  padding: .5rem 1rem;
+  background: #0a0a0a;
+  outline: .0625rem solid #cdcdcd;
+  border-radius: .5rem;
+  color: #cdcdcd;
+  transition: background-color .25s ease, color .25s ease;
+}
+.signInButton a:hover {
+  color: #eee;
+  transition: none;
+  animation: sign-in-outline-rotation 2s linear infinite;
+}
+@keyframes sign-in-outline-rotation {
+  0%, 100% {
+    outline-color: var(--rgb-1);
+    color: var(--rgb-1);
+  }
+  16% {
+    outline-color: var(--rgb-2);
+    color: var(--rgb-2);
+  }
+  32% {
+    outline-color: var(--rgb-3);
+    color: var(--rgb-3);
+  }
+  48% {
+    outline-color: var(--rgb-4);
+    color: var(--rgb-4);
+  }
+  64% {
+    outline-color: var(--rgb-5);
+    color: var(--rgb-5);
+  }
+  82% {
+    outline-color: var(--rgb-6);
+    color: var(--rgb-6);
+  }
+}
+.signInButton a:focus-visible {
+  color: #eee;
+  transition: none;
+  animation: none;
+}
+/* Sign In Profile (When Logged In) */
+.signInProfile {
+  text-decoration-skip-ink: auto;
+}
