@@ -20,8 +20,8 @@ export default async function UserAvatar() {
         <Image
           src={session.user.image ?? ""}
           alt="User Avatar"
-          height={512}
-          width={512}
+          height={256}
+          width={256}
         />
         <p>{userEmailPrompt}</p>
         <p>Name: &apos;{session.user.name}&apos;</p>

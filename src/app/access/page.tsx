@@ -1,5 +1,5 @@
 import app from "./page.module.css";
-import "@/app/assets/styles/access.css";
+import "./access.css";
 import SignIn from "@/app/assets/components/user/signin";
 import Script from "next/script";
 import {auth} from "@/auth";

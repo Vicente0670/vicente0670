@@ -1,4 +1,5 @@
 /* Authentication Buttons - Access Page */
+/* This is placed here so I can use "form". Somehow, creating actual classes for these forms breaks the entire sign in page. */
 
 /* Button Images */
 #google-image {
