@@ -26,7 +26,9 @@ export default async function Access() {
             </div>
           </div>
           <div className={app.accessFooter}>
-            <p><a href="/access" title="Access Page, the current page you are on.">Access</a> page secured by <a href="https://authjs.dev/" title="A secure, open source authentication method." target="_blank">Auth.js</a>.</p>
+            <p>
+              <a href="/access" title="Access Page, the current page you are on.">Access</a> page secured by <a href="https://authjs.dev/" title="A secure, open source authentication method." target="_blank">Auth.js</a>.
+            </p>
           </div>
         </div>
       </main>

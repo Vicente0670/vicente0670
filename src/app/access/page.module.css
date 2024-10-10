@@ -73,6 +73,7 @@
 .access .title .name p {
   word-wrap: break-word;
 }
+
 .access .providers {
   display: flex;
   flex-direction: row;
@@ -124,6 +125,11 @@
 }
 
 @media screen and (max-width: 34rem) {
+  .container {
+    background: #00000080;
+    backdrop-filter: blur(.25rem);
+    transition: background-color .25s ease;
+  }
   .access {
     margin: 0;
     height: 100%;
@@ -131,6 +137,7 @@
     background: transparent;
     outline: none;
     border-radius: 0;
+    backdrop-filter: none;
   }
   .access .title {
     margin: 2rem 1rem;
