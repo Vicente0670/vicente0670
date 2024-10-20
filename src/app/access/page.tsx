@@ -1,17 +1,19 @@
-import app from "./page.module.css";
 import "./access.css";
-import SignIn from "@/app/assets/components/user/signin";
+import Link from "next/link";
+import app from "./page.module.css";
+import SignIn from "@/components/user/signin";
 import Script from "next/script";
-import {auth} from "@/auth";
-import {permanentRedirect} from "next/navigation";
+import { auth } from "@/auth";
+import { permanentRedirect } from "next/navigation";
 
 export default async function Access() {
+
   const session = await auth();
   if (session) permanentRedirect("/");
+
   return (
     <>
       <main>
-        <Script src="/assets/scripts/app/globe/globe.js" />
         <div className={app.container}>
           <div className={app.access}>
             <div className={app.title}>
@@ -27,11 +29,12 @@ export default async function Access() {
           </div>
           <div className={app.accessFooter}>
             <p>
-              <a href="/access" title="Access Page, the current page you are on.">Access</a> page secured by <a href="https://authjs.dev/" title="A secure, open source authentication method." target="_blank">Auth.js</a>.
+              <Link href="/access" title="Access Page, the current page you are on.">Access</Link> page secured by <Link href="https://authjs.dev/" title="A secure, open source authentication method." target="_blank">Auth.js</Link>.
             </p>
           </div>
         </div>
       </main>
+      <Script src="/assets/scripts/app/globe/globe.js" />
     </>
   );
 }

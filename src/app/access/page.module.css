@@ -25,16 +25,16 @@
 
 .access {
   position: relative;
-  margin: 0 2rem;
-  margin-top: auto;
+  margin: auto;
   padding: 0 1rem;
   min-height: 10rem;
   height: 100%;
   max-width: 45rem;
   width: 90%;
-  background: #10101080;
+  background: #000000aa;
   outline: 2px solid #242424;
   border-radius: 1rem;
+  box-shadow: .125rem .125rem 1rem #121212;
   backdrop-filter: blur(1rem);
   overflow-y: auto;
   overflow-x: hidden;
@@ -103,10 +103,11 @@
 
 /* Specific Footer for Access Page */
 .accessFooter {
+  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 4rem;
+  bottom: 0;
   height: 3rem;
   max-width: 40rem;
   width: 70%;
@@ -126,10 +127,23 @@
 
 @media screen and (max-width: 34rem) {
   .container {
-    background: #00000080;
-    backdrop-filter: blur(.25rem);
+    background: #000000aa;
     transition: background-color .25s ease;
+    animation: intro-ease-mobile 3s ease 1;
   }
+
+  @keyframes intro-ease-mobile {
+    0% {
+      background: #000;
+    }
+    50% {
+      background: #000;
+    }
+    100% {
+      background: #000000aa;
+    }
+  }
+
   .access {
     margin: 0;
     height: 100%;
@@ -137,11 +151,14 @@
     background: transparent;
     outline: none;
     border-radius: 0;
+    box-shadow: none;
     backdrop-filter: none;
   }
+
   .access .title {
     margin: 2rem 1rem;
   }
+
   .accessFooter {
     margin-top: auto;
   }
@@ -151,6 +168,7 @@
   .access .title .name h4, .access .title .name p {
     word-break: break-all;
   }
+
   .accessFooter {
     height: auto;
   }

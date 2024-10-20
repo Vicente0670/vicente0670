@@ -14,20 +14,17 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 var canvas = document.body.appendChild(renderer.domElement);
 canvas.style.position = "fixed";
 canvas.style.top = "0";
-canvas.style.zIndex = "0";
-canvas.style.filter = "blur(0rem)";
+canvas.style.zIndex = "0";	
 
-const texture = new THREE.TextureLoader().load('/assets/scripts/app/globe/earth.jpg');
+const texture = new THREE.TextureLoader().load("/assets/scripts/app/globe/earth.jpg");
 const geometry = new THREE.SphereGeometry(32, 32, 32);
 const material = new THREE.MeshBasicMaterial({ map: texture });
 const earth = new THREE.Mesh(geometry, material);
-const light = new THREE.PointLight(0xffffff, 1.0, 100);
-light.position.set(0, 0, 0);
-const starGeometry = new THREE.SphereGeometry(500, 64, 64);
+earth.position.z = 170;
+const starGeometry = new THREE.SphereGeometry(500, 1, -1000);
 const starField = new THREE.Mesh(starGeometry);
 
 scene.add(earth);
-scene.add(light);
 scene.add(starField);
 
 function createStars(numStars) {
@@ -41,8 +38,8 @@ function createStars(numStars) {
 		starVertices.push(x, y, z);
 	}
 
-	starsGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starVertices, 3));
-	const starsMaterial = new THREE.PointsMaterial({ color: 0xffffff });
+	starsGeometry.setAttribute("position", new THREE.Float32BufferAttribute(starVertices, 2));
+	const starsMaterial = new THREE.PointsMaterial({ color: 0xaaaaaa });
 	const starPoints = new THREE.Points(starsGeometry, starsMaterial);
 	scene.add(starPoints);
 }
@@ -51,16 +48,15 @@ createStars(5000);
 camera.rotation.z = 0;
 camera.position.x = 0;
 camera.position.y = 2;
-camera.position.z = 110;
+camera.position.z = 280;
 
 function animate() {
 	requestAnimationFrame(animate);
 	earth.rotation.y += 0.001;
-	starField.rotation.y += 30;
 	renderer.render(scene, camera);
 }
 
-window.addEventListener('resize', () => {
+window.addEventListener("resize", () => {
 	renderer.setSize(window.innerWidth, window.innerHeight);
 	camera.aspect = window.innerWidth / window.innerHeight;
 	camera.updateProjectionMatrix();

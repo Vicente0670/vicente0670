@@ -1,7 +1,12 @@
 import "./youtube.css";
-const YouTubeGallery = ({videos}) => {
+
+interface YouTubeGalleryProps {
+  videos: Array<any>;
+}
+
+export const YouTubeGallery = ({ videos }: YouTubeGalleryProps) => {
   const videoDateLayout = {
-    weekday: "long",
+    weekday: "long", 
     year: "numeric",
     month: "long",
     day: "numeric",
@@ -12,6 +17,7 @@ const YouTubeGallery = ({videos}) => {
       <div className="youtube-container-title">
         <h5>Latest Uploads</h5>
       </div>
+      
       {videos.map((video) => (
       <div key={video.videoId} className="youtube-video">
         <div className="youtube-thumbnail-container">
@@ -19,11 +25,10 @@ const YouTubeGallery = ({videos}) => {
         </div>
         <div className="youtube-info-container">
           <h5>{video.title}</h5>
-          <p className="youtube-caption">Published {new Date(video.publishedAt).toLocaleDateString(undefined, videoDateLayout)}</p>
+          <p className="youtube-caption">Published {new Date(video.publishedAt).toLocaleDateString()}</p>
         </div>
       </div>
       ))}
     </div>
   )
 }
-export default YouTubeGallery;

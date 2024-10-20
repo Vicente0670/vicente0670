@@ -5,18 +5,23 @@
 #google-image {
   background: url("/assets/icons/google.svg");
 }
+
 #twitter-image {
   background: url("/assets/icons/twitter.svg");
 }
+
 #discord-image {
   background: url("/assets/icons/discord.svg");
 }
+
 #github-image {
   background: url("/assets/icons/github.svg");
 }
+
 #resend-image {
   background: url("/assets/icons/resend.svg");
 }
+
 /* General Input Styling */
 form button {
   display: flex;
@@ -28,19 +33,23 @@ form button {
   background: #2a2a2a;
   color: #cccccc;
 }
+
 form button:hover {
-  background: #606060;
+  background: #505050;
   color: #dddddd;
 }
+
 form button:active {
-  background: #545454;
+  background: #404040;
   color: #cccccc;
 }
+
 form button:focus-visible {
-  background: #606060;
+  background: #505050;
   outline: 2px solid #cccccc;
   color: #dddddd;
 }
+
 form button div {
   margin-right: .75rem;
   aspect-ratio: 1;
@@ -50,29 +59,57 @@ form button div {
   background-repeat: no-repeat;
   filter: contrast(0) brightness(0) invert(.9);
 }
+
 #resend-form {
   margin: 1rem 0;
 }
+
 #resend-form input {
   padding: .25rem .5rem;
   max-width: 15rem;
   width: 100%;
   background: #121212;
   border: none;
-  outline: 2px solid #777;
+  outline: 2px solid #404040;
   border-radius: .25rem;
+  box-shadow: inset .125rem .125rem .125rem #000;
   font-size: 1rem;
-  color: #dddddd;
+  color: #606060;
+  transition: transform .0625s;
   cursor: pointer;
+  animation: shake .1s ease infinite;
 }
+
+@keyframes shake {
+  0%, 100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(.25rem, .125rem);
+  }
+  40% {
+    transform: translateX(-.125rem, -.125rem);
+  }
+  60% {
+    transform: translate(.125rem, -.125rem);
+  }
+  80% {
+    transform: translate(-.25rem, .125rem);
+  }
+}
+
 #resend-form input:hover {
-  outline-color: #999;
+  outline-color: #606060;
+  color: #808080;
 }
+
 #resend-form input:focus {
   background: #242424;
-  outline-color: #bbb;
+  outline-color: #808080;
+  color: #a0a0a0;
   cursor: text;
 }
+
 #access-break {
   align-items: center;
   margin: 0 auto;

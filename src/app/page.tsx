@@ -1,5 +1,5 @@
 import app from "./page.module.css";
-import UserAvatar from "./assets/components/user/profile";
+import UserAvatar from "@/components/user/profile";
 
 export default async function Home() {
   return (
@@ -18,7 +18,7 @@ export default async function Home() {
       <p>Some text to see. I can&apos;t see.</p>
       <p>Some text to see. I can&apos;t see.</p>
       <p>Some text to see. I can&apos;t see.</p>
-      <p>Some text to see. <a href="/">I am no see.</a></p>
+      <p>Some text to see. <a href="/access">I am no see.</a></p>
       <p>Some text to see. I can&apos;t see.</p>
       <p>Some text to see. I can&apos;t see.</p>
       <p>Some text to see. I can&apos;t see.</p>

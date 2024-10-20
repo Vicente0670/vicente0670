@@ -1,6 +1,6 @@
-import SignIn from "@/app/assets/components/user/signin";
-import SignOut from "@/app/assets/components/user/signout";
-import UserAvatar from "@/app/assets/components/user/profile";
+import SignIn from "@/components/user/signin";
+import SignOut from "@/components/user/signout";
+import UserAvatar from "@/components/user/profile";
 
 export default function Remote() {
   return (
