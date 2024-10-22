@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
   title: "Vicente0670",
   applicationName: "Vicente0670",
-  description: "This page contains basic information and does not have a proper layout.",
+  description: "This page contains basic information and does not have a proper layout.", // ?? this page doesnt exist
   authors: [{ name: "Vicente0670", url: "/" }, { name: "tookender", url: "https://korino.dev" }],
   icons: {
     icon: "/favicon.ico",
