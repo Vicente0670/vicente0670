@@ -11,11 +11,10 @@
   "dependencies": {
     "@auth/mongodb-adapter": "^3.0.0",
     "@ducanh2912/next-pwa": "^10.2.7",
+    "nextjs-toploader": "^3.7.15",
     "mongodb": "^6.6.1",
     "next": "^14.2.14",
     "next-auth": "^5.0.0-beta.22",
-    "next-nprogress-bar": "^2.3.14",
-    "nprogress": "^0.2.0",
     "react": "^18",
     "react-dom": "^18",
     "three": "^0.169.0"
