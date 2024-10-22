@@ -1,10 +1,9 @@
 import "./globals.css"; 
 
-import { Providers } from "./providers"
+import NextTopLoader from "nextjs-toploader";
 import Footer from "@/components/layout/footer/footer";
 import GlobalHeader from "@/components/layout/header/header";
 
-import "nprogress/nprogress.css";
 import Script from "next/script";
 import type { Metadata, Viewport } from "next";
 
@@ -49,9 +48,12 @@ export default function RootApplicationLayout({
         <Script src="/assets/scripts/header.js" strategy="beforeInteractive"/>
       </head>
       <body>
+        <NextTopLoader // Change the gradient to your likings.
+          color={"linear-gradient(to right, #ef4444, #22c55e, #3b82f6)"}
+        />
         <GlobalHeader />
 
-        <Providers>{children}</Providers>
+        {children}
         
         <Footer />
       </body>
