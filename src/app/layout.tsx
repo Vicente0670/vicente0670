@@ -45,6 +45,7 @@ export default function RootApplicationLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="darkreader-lock"/>
         <Script src="/assets/scripts/header.js" strategy="beforeInteractive"/>
       </head>
       <body>
