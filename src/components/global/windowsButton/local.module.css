@@ -1,0 +1,129 @@
+.buttonContainer {
+  margin: .75rem 5rem;
+  perspective: 50rem;
+  
+  .root {
+    height: 5rem;
+    background: #000;
+    outline: .125rem solid transparent;
+    outline-offset: .125rem;
+    border-radius: .5rem;
+    transition: outline-color .25s ease, transform .0625s ease;
+    overflow: hidden;
+    cursor: pointer;
+
+    .link {
+      height: 100%;
+      width: 100%;
+      text-decoration: none;
+      outline: none;
+
+      .rectangle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        margin: .0625rem;
+        height: calc(100% - .125rem);
+        width: calc(100% - .125rem);
+        border-radius: .4375rem;
+        background: var(--windows-background-default-dark);
+        backdrop-filter: blur(10rem);
+        transition: background-color .25s ease;
+        z-index: 2;
+        
+        p {
+          color: var(--windows-default-dark);
+          transition: color .25s ease;
+        }
+        
+        p::selection {
+          background-color: transparent;
+          color: inherit;
+        }
+        
+      }
+      
+      .circle {
+        top: 100%;
+        left: 100%;
+        position: relative;
+        height: 5rem;
+        width: 5rem;
+        background: #fff;
+        border-radius: 2.5rem;
+        filter: blur(2rem);
+        z-index: 1;
+      }
+
+    }
+
+  }
+
+}
+
+.buttonContainer:hover {
+
+  .root {
+    transition: outline-color 0s ease, transform .0625s ease;
+
+    .link .rectangle {
+      background: var(--windows-background-hover-dark);
+      transition: none;
+
+      p {
+        color: var(--windows-hover-dark);
+        transition: none;
+      }
+
+    }
+
+  }
+
+}
+
+.buttonContainer:active
+
+  .root {
+    transition: outline-color 0s ease, transform .0625s ease;
+    
+    .link .rectangle {
+      background: var(--windows-background-active-dark);
+      transition: none;
+
+      p {
+        color: var(--windows-active-dark);
+        transition: none;
+      }
+
+    }
+
+  }
+
+.buttonContainer:has(.root .link:focus-visible) {
+
+  .root {
+    outline: .125rem solid var(--windows-focused-outline-dark);
+    outline-offset: .375rem;
+    transition: outline-color 0s ease, transform .0625s ease;
+    animation: windowsOutlinePulse 1.5s ease infinite;
+
+    .link .rectangle {
+      background: var(--windows-background-focused-dark);
+      transition: none;
+
+      p {
+        color: var(--windows-focused-dark);
+        transition: none;
+      }
+
+    }
+
+  }
+
+}
+
+@keyframes windowsOutlinePulse {
+  0%, 100% { outline-offset: .125rem; }
+  50% { outline-offset: .375rem; }
+}

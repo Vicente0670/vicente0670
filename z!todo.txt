@@ -1,0 +1,4 @@
+TODO
+
+- DONE ``edit the logo using the previous SVG to be easier to work with``
+  - custom favicon for 404 page?

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 720 720">
+  <!-- Generator: Adobe Illustrator 29.1.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 142)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #eee;
+      }
+
+      .st1 {
+        fill: #f4e897;
+      }
+
+      .st2 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="-72.1" y1="561.3" x2="795.1" y2="876.9" gradientTransform="translate(0 -358)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0099cd"/>
+      <stop offset="1" stop-color="#ec008c"/>
+    </linearGradient>
+  </defs>
+  <rect class="st2" x="1.5" y="1.1" width="720" height="720"/>
+  <rect class="st0" x="150" y="320" width="420" height="80" transform="translate(-101.4 575.2) rotate(-70)"/>
+  <circle class="st0" cx="394.2" cy="149" r="55"/>
+  <circle class="st0" cx="469.3" cy="176.2" r="55" transform="translate(12.8 383.5) rotate(-45)"/>
+  <circle class="st0" cx="250.6" cy="543.7" r="55"/>
+  <circle class="st0" cx="325.8" cy="571" r="55"/>
+  <g>
+    <polygon class="st1" points="526.1 599.1 482 555.7 423.8 567.6 448.6 512 417.9 457.8 477.3 466.8 516.5 421.4 528.4 482.6 583.3 508.7 531.3 537.5 526.1 599.1"/>
+    <polygon class="st1" points="628.1 401.5 584.7 406.2 565.3 443.4 545.9 405.1 502.5 397.7 533.9 369.2 526.6 327.5 565.3 348.3 604.2 329.9 596.7 371.1 628.1 401.5"/>
+    <polygon class="st1" points="586.8 256.1 564.6 274.9 567.7 302.7 542.7 288.7 516 300.8 522.7 273.4 503.1 253.1 532.3 250.1 546.8 225.5 558.1 251 586.8 256.1"/>
+  </g>
+  <g>
+    <polygon class="st1" points="203.6 115.8 246.1 160.7 304.6 150.8 277.9 205.5 306.7 260.8 247.8 249.6 207 293.7 197.2 232.1 143.2 204.1 196.2 177.2 203.6 115.8"/>
+    <polygon class="st1" points="94.7 309.7 138.3 306.5 159 270 177 309 220.1 317.8 187.7 345.2 193.6 387.1 155.6 365 116.2 382.1 125 341.1 94.7 309.7"/>
+    <polygon class="st1" points="131 456.4 153.8 438.4 151.7 410.5 176.2 425.4 203.3 414.2 195.6 441.4 214.5 462.3 185.2 464.3 169.8 488.4 159.4 462.5 131 456.4"/>
+  </g>
+</svg>
