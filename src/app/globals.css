@@ -1,42 +1,196 @@
+/*
+accent
+#0099cd blue
+#ec008c pink
+*/
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  /* Dark Mode (Primary) */
+  --primary-background-dark: #000f14; 
+  --secondary-background-dark: #00161f;
+  --tertiary-background-dark: #001d28;
+  
+  --primary-header-dark: #d9eaf0;
+  --alternative-header-dark: #b3d1da;
+  --paragraph-text-dark: #a8c2ca;
+  
+  --link-default-dark: #e2c509;
+  --link-hover-dark: #eee39f;
+  --link-active-dark: #edece6;
+  --link-focus-color-1-dark: #ede29f;
+  --link-focus-color-2-dark: #e4c918;
+  --link-selected-default-dark: #121001;
+  --link-selected-background-dark: #fff4a9cc;
+  --link-selected-hover-dark: #f6ee9c;
+  --link-selected-hover-shadow-dark: #423e00;
+  --link-selected-active-dark: #342f04;
+  --link-selected-active-shadow-dark: #fffdd1;
+  --link-shadow-width: .0625rem;
+  --link-shadow-width-negative: -.0625rem;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+  --highlighted-text-color-dark: #30001d;
+  --highlighted-text-background-dark: #f970c2cc;
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
+  --code-box-text: #ddd;
+  --code-box-background: #022935;
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --keyboard-input-text: #8ec9db;
+  --keyboard-input-background: #0a3c4e;
+  --keyboard-input-shadow: #005774;
+
+  /* /src/components/global/windowsButton/local.module.css */
+  --windows-default-dark: #0099cd;
+  --windows-hover-dark: #54caf2;
+  --windows-active-dark: #65b8d1;
+  --windows-focused-dark: #54caf2;
+  --windows-focused-outline-dark: #0099cd;
+
+  --windows-background-default-dark: #060638;
+  --windows-background-hover-dark: #15159180;
+  --windows-background-active-dark: #2727bd80;
+  --windows-background-focused-dark: #15159180;
 }
 
 * {
-  box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  touch-action: manipulation;
+  color-scheme: dark;
 }
+
+*::selection {
+  background: var(--highlighted-text-background-dark);
+  color: var(--highlighted-text-color-dark);
+}
+
+html, body {
+  min-width: 256px;
+  background: var(--primary-background-dark);
+}
+
+h1 {
+  font-size: 3.75rem;
+  font-size: clamp(2.25rem, 6.5vw + 1rem, 3.75rem);
+  color: var(--primary-header-dark);
+}
+
+h2, h3, h4, h5, h6 { color: var(--alternative-header-dark); }
+
+h2 {
+  font-size: 2.5rem;
+  font-size: clamp(1.75rem, 5vw + .5rem, 2.5rem);
+}
+
+h3 {
+  font-size: 2rem;
+  font-size: clamp(1.5rem, 4vw + .5rem, 2rem);
+}
+
+h4 {
+  font-size: 1.75rem;
+  font-size: clamp(1.33rem, 3.5vw + .45rem, 1.75rem);
+}
+
+h5 {
+  font-size: 1.5rem;
+  font-size: clamp(1.25rem, 3vw + .5rem, 1.5rem);
+}
+
+h6 {
+  font-size: 1.25rem;
+  font-size: clamp(1.125rem, 2.75vw + .45rem, 1.25rem);
+}
+
+p, a { font-size: 1rem; }
+
+p { color: var(--paragraph-text-dark); }
 
 a {
-  color: inherit;
-  text-decoration: none;
+  outline: .125rem solid transparent;
+  outline-offset: .125rem;
+  border-radius: .125rem;
+  color: var(--link-default-dark);
+  text-decoration-thickness: .0625rem;
+  text-decoration-style: double;
+  transition: color .25s ease;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+a:hover, a:active { transition: none; } /* ::selection pseudo-element does not allow for text color transitions :( */
+a:hover { color: var(--link-hover-dark); }
+a:active { color: var(--link-active-dark); }
+a:focus-visible { animation: defaultPulseDark 1.25s ease infinite; }
+
+a::selection {
+  background: var(--link-selected-background-dark);
+  text-decoration-color: var(--link-selected-default-dark);
+  color: var(--link-selected-default-dark);
+}
+
+a:hover::selection {
+  text-shadow: /* ..."-webkit-text-stroke" is not affected by the selection pseudo-element :( " */
+    var(--link-shadow-width) var(--link-shadow-width) var(--link-selected-hover-shadow-dark),
+    var(--link-shadow-width-negative) var(--link-shadow-width-negative) var(--link-selected-hover-shadow-dark),
+    var(--link-shadow-width) var(--link-shadow-width-negative) var(--link-selected-hover-shadow-dark),
+    var(--link-shadow-width-negative) var(--link-shadow-width) var(--link-selected-hover-shadow-dark),
+    0 var(--link-shadow-width) var(--link-selected-hover-shadow-dark),
+    0 var(--link-shadow-width-negative) var(--link-selected-hover-shadow-dark),
+    var(--link-shadow-width) 0 var(--link-selected-hover-shadow-dark),
+    var(--link-shadow-width-negative) 0 var(--link-selected-hover-shadow-dark);
+  color: var(--link-selected-hover-dark);
+}
+a:active::selection {
+  text-shadow: /* ..."-webkit-text-stroke" is not affected by the selection pseudo-element :( " */
+    var(--link-shadow-width) var(--link-shadow-width) var(--link-selected-active-shadow-dark),
+    var(--link-shadow-width-negative) var(--link-shadow-width-negative) var(--link-selected-active-shadow-dark),
+    var(--link-shadow-width) var(--link-shadow-width-negative) var(--link-selected-active-shadow-dark),
+    var(--link-shadow-width-negative) var(--link-shadow-width) var(--link-selected-active-shadow-dark),
+    0 var(--link-shadow-width) var(--link-selected-active-shadow-dark),
+    0 var(--link-shadow-width-negative) var(--link-selected-active-shadow-dark),
+    var(--link-shadow-width) 0 var(--link-selected-active-shadow-dark),
+    var(--link-shadow-width-negative) 0 var(--link-selected-active-shadow-dark);
+  color: var(--link-selected-active-dark);
+}
+a:focus-visible::selection { animation: highlightedPulseDark 1.25s ease infinite; }
+
+code {
+  padding: .25rem;
+  background: var(--code-box-background);
+  border-radius: .25rem;
+  color: var(--code-box-text);
+}
+
+kbd {
+  padding: .075rem .5rem;
+  background: var(--keyboard-input-background);
+  border-radius: .25rem;
+  box-shadow: 0 .2rem 0 var(--keyboard-input-shadow);
+  color: var(--keyboard-input-text);
+}
+
+img { /* TEMPORARY!!!!!!!!!! PLEASE REMOVE THIS AFTER COMPLETION!!!!!!!!!!!! */
+  height: 200px;
+  width: 200px;
+  border-radius: 203rem;
+}
+
+@keyframes defaultPulseDark {
+  0%, 100% {
+    outline-color: var(--link-focus-color-1-dark);
+    color: var(--link-focus-color-1-dark);
+  }
+  50% {
+    outline-color: var(--link-focus-color-2-dark);
+    color: var(--link-focus-color-2-dark);
+  }
+}
+
+@keyframes highlightedPulseDark {
+  0%, 100% {
+    outline-color: var(--link-selected-focus-color-1-dark);
+    color: var(--link-selected-focus-color-1-dark);
+  }
+  50% {
+    outline-color: var(--link-selected-focus-color-2-dark);
+    color: var(--link-selected-focus-color-2-dark);
   }
 }
