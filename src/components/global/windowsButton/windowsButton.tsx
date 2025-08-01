@@ -45,10 +45,10 @@ export default function WindowsButton({ href }: { href: string }) {
   const warpPerspective = useCallback((e: MouseEvent) => {
     // Get cursor X value on page
     // Subtract this by the current bounding box's X value on the DOM to reset the position of the mouse
-    // (Without subtracting, this value is higher than it needs to be since its also considering its value away from the topm left of the document)
+    // (Without subtracting, this value is higher than it needs to be since its also considering its value away from the top left of the document)
     // Divide by the width of the document to get a value from 0–1 (En dash Alt Code = 0151)
     // Remove 0.5 to make the center of the element 0
-    // Multiply by 2 to allow for a full threshold (e.g., threshold can be .5, so it is now 1, or threshold can be -.5, now -1)
+    // Multiply by 2 to allow for a full threshold (e.g., threshold can be .5, so it is now 1 to accomodate "rotate3d" in CSS)
     // Same concept among both X & Y thresholds
 
     const xThreshold = ((((e.pageX - rectangleDimensions.current.x) + 1) / rectangleDimensions.current.width) - .5) * 2;
@@ -70,7 +70,7 @@ export default function WindowsButton({ href }: { href: string }) {
       enabled(true);
     }
 
-  }, [isEnabled, enabled, logDigits, dimensionAssign, warpPerspective]);
+  }, [isEnabled, enabled, logDigits, dimensionAssign, warpPerspective, resetPerspective]);
 
   return (
     <div className={button.buttonContainer} ref={container}>
