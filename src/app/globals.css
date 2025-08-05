@@ -4,7 +4,7 @@ accent
 #ec008c pink
 */
 :root {
-  /* Dark Mode (Primary) */
+  /* Dark Mode (Primary)
   --primary-background-dark: #000f14; 
   --secondary-background-dark: #00161f;
   --tertiary-background-dark: #001d28;
@@ -37,7 +37,52 @@ accent
   --keyboard-input-background: #0a3c4e;
   --keyboard-input-shadow: #005774;
 
-  /* /src/components/global/windowsButton/local.module.css */
+  src/components/global/windowsButton */
+  /* --windows-default-dark: #0099cd;
+  --windows-hover-dark: #54caf2;
+  --windows-active-dark: #65b8d1;
+  --windows-focused-dark: #54caf2;
+  --windows-focused-outline-dark: #0099cd;
+
+  --windows-background-default-dark: #060638;
+  --windows-background-hover-dark: #15159180;
+  --windows-background-active-dark: #2727bd80;
+  --windows-background-focused-dark: #15159180; */
+
+  /* Light Mode (Secondary) */
+  --primary-background-dark: #000f14; 
+  --secondary-background-dark: #00161f;
+  --tertiary-background-dark: #001d28;
+  
+  --primary-header-dark: #d9eaf0;
+  --alternative-header-dark: #b3d1da;
+  --paragraph-text-dark: #a8c2ca;
+  
+  --link-default-dark: #e2c509;
+  --link-hover-dark: #eee39f;
+  --link-active-dark: #edece6;
+  --link-focus-color-1-dark: #ede29f;
+  --link-focus-color-2-dark: #e4c918;
+  --link-selected-default-dark: #121001;
+  --link-selected-background-dark: #fff4a9cc;
+  --link-selected-hover-dark: #f6ee9c;
+  --link-selected-hover-shadow-dark: #423e00;
+  --link-selected-active-dark: #342f04;
+  --link-selected-active-shadow-dark: #fffdd1;
+  --link-shadow-width: .0625rem;
+  --link-shadow-width-negative: -.0625rem;
+
+  --highlighted-text-color-dark: #30001d;
+  --highlighted-text-background-dark: #f970c2cc;
+
+  --code-box-text: #ddd;
+  --code-box-background: #022935;
+
+  --keyboard-input-text: #8ec9db;
+  --keyboard-input-background: #0a3c4e;
+  --keyboard-input-shadow: #005774;
+
+  /* src/components/global/windowsButton */
   --windows-default-dark: #0099cd;
   --windows-hover-dark: #54caf2;
   --windows-active-dark: #65b8d1;
@@ -48,7 +93,25 @@ accent
   --windows-background-hover-dark: #15159180;
   --windows-background-active-dark: #2727bd80;
   --windows-background-focused-dark: #15159180;
+
 }
+
+/* Color Styling for User Color Preference */
+html.dark body, html.unset body { /* unset class is here to avoid flashbang */
+  #test {
+    background: rgb(20, 0, 203);
+    color: black;
+  }
+}
+
+html.light body {
+  #test {
+    background: #ffff42;
+    color: rgb(255, 255, 255);
+  }
+}
+
+/* Light Mode */
 
 * {
   margin: 0;
@@ -192,5 +255,19 @@ img { /* TEMPORARY!!!!!!!!!! PLEASE REMOVE THIS AFTER COMPLETION!!!!!!!!!!!! */
   50% {
     outline-color: var(--link-selected-focus-color-2-dark);
     color: var(--link-selected-focus-color-2-dark);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  code {
+    background: red;
+    color: black;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  code {
+    background: yellowgreen;
+    color: white;
   }
 }

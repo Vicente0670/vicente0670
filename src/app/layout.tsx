@@ -1,6 +1,8 @@
 import "./globals.css";
 import { Metadata, Viewport } from "next";
+import { cookies } from "next/headers";
 import { Noto_Sans } from "next/font/google";
+import ThemeManager from "./api/clientTheme/themeManager";
 
 const defaultSchema = {
   title: "Vicente0670",
@@ -38,10 +40,21 @@ export const viewport: Viewport = {
 
 const notoSans = Noto_Sans({ subsets: ["latin"] });
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+
+  const globalCookies = await cookies();
+
+  const themeCookie = "theme";
+  const systemCookie = "isSystem";
+
+  const theme = globalCookies.get(themeCookie)?.value || "unset";
+  const system = globalCookies.get(systemCookie)?.value || "true";
+
   return (
-    <html lang="en" className={notoSans.className}>
+    <html lang="en" className={notoSans.className + " " + theme} suppressHydrationWarning>
       <body>
+        
+        <ThemeManager theme={theme} system={system} />
         {children}
       </body>
     </html>

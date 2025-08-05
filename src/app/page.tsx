@@ -14,6 +14,11 @@ export default function Home() {
       <code>
         funny();
       </code>
+
+      <div id="test">
+        Sometimes
+      </div>
+
       <div className={home.intro1}>
         <p>testing things around and stuff</p>
       </div>
