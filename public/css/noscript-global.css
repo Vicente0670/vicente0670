@@ -1,0 +1,222 @@
+/* Color Styles */
+/* Dark */
+@media (prefers-color-scheme: dark) {
+
+  .light:root, .dark:root, .unset:root, :root {
+    --primary-background: #000f14; 
+    --secondary-background: #00161f;
+    --tertiary-background: #001d28;
+    
+    --primary-header: #d9eaf0;
+    --alternative-header: #b3d1da;
+    --paragraph-text: #a8c2ca;
+    
+    --link-default: #f388bd;
+    --link-hover: #feb2d8;
+    --link-active: #fed6e9;
+    --link-focus-color-1: #fed6e9;
+    --link-focus-color-2: #f388bd;
+    --link-selected-default: #280114;
+    --link-selected-background: #ffc8e1cc;
+    --link-selected-hover: #fed6e9;
+    --link-selected-hover-shadow: #280114;
+    --link-selected-active: #280114;
+    --link-selected-active-shadow: #ffe9f4;
+    --link-shadow-width: .0625rem;
+    --link-shadow-width-negative: -.0625rem;
+
+    --highlighted-text-color: #30001d;
+    --highlighted-text-background: #f970c2cc;
+
+    --code-box-text: #ddd;
+    --code-box-background: #022935;
+
+    --keyboard-input-text: #addae8;
+    --keyboard-input-background: #0a3c4e;
+    --keyboard-input-shadow: #01556e;
+
+    /* src/components/global/windowsButton */
+    --windows-default: #0099cd;
+    --windows-hover: #54caf2;
+    --windows-active: #65b8d1;
+    --windows-focused: #54caf2;
+    --windows-focused-outline: #0099cd;
+
+    --windows-background-default: #060638;
+    --windows-background-hover: #15159180;
+    --windows-background-active: #2727bd80;
+    --windows-background-focused: #15159180;
+  }
+
+  html, html body {
+    background: var(--primary-background) !important;
+    color-scheme: dark !important;
+
+    *::selection {  
+      background: var(--highlighted-text-background);
+      color: var(--highlighted-text-color);
+    }
+    
+    h1 { color: var(--primary-header); }
+    h2, h3, h4, h5, h6 { color: var(--alternative-header); }
+    p { color: var(--paragraph-text); }
+
+    a { color: var(--link-default); }
+    a:hover { color: var(--link-hover); }
+    a:active { color: var(--link-active); }
+    a:focus-visible { animation-name: defaultPulseDark; }
+    a::selection {
+      background: var(--link-selected-background);
+      text-decoration-color: var(--link-selected-default);
+      color: var(--link-selected-default);
+    }
+    a:hover::selection {
+      text-shadow: /* ..."-webkit-text-stroke" is not affected by the selection pseudo-element :( " */
+        var(--link-shadow-width) var(--link-shadow-width) var(--link-selected-hover-shadow),
+        var(--link-shadow-width-negative) var(--link-shadow-width-negative) var(--link-selected-hover-shadow),
+        var(--link-shadow-width) var(--link-shadow-width-negative) var(--link-selected-hover-shadow),
+        var(--link-shadow-width-negative) var(--link-shadow-width) var(--link-selected-hover-shadow),
+        0 var(--link-shadow-width) var(--link-selected-hover-shadow),
+        0 var(--link-shadow-width-negative) var(--link-selected-hover-shadow),
+        var(--link-shadow-width) 0 var(--link-selected-hover-shadow),
+        var(--link-shadow-width-negative) 0 var(--link-selected-hover-shadow);
+      color: var(--link-selected-hover);
+    }
+    a:active::selection {
+      text-shadow:
+        var(--link-shadow-width) var(--link-shadow-width) var(--link-selected-active-shadow),
+        var(--link-shadow-width-negative) var(--link-shadow-width-negative) var(--link-selected-active-shadow),
+        var(--link-shadow-width) var(--link-shadow-width-negative) var(--link-selected-active-shadow),
+        var(--link-shadow-width-negative) var(--link-shadow-width) var(--link-selected-active-shadow),
+        0 var(--link-shadow-width) var(--link-selected-active-shadow),
+        0 var(--link-shadow-width-negative) var(--link-selected-active-shadow),
+        var(--link-shadow-width) 0 var(--link-selected-active-shadow),
+        var(--link-shadow-width-negative) 0 var(--link-selected-active-shadow);
+      color: var(--link-selected-active);
+    }
+    a:focus-visible::selection { animation-name: highlightedPulseDark; }
+
+    code {
+      background: var(--code-box-background);
+      color: var(--code-box-text);
+    }
+
+    kbd {
+      background: var(--keyboard-input-background);
+      box-shadow: 0 .2rem 0 var(--keyboard-input-shadow);
+      color: var(--keyboard-input-text);
+    }
+
+  }
+
+}
+
+/* Light */
+@media (prefers-color-scheme: light) {
+
+  .light:root, .dark:root, .unset:root, :root {
+    --primary-background: #f1fafd; 
+    --secondary-background: #d9f6fe;
+    --tertiary-background: #c5effc;
+    
+    --primary-header: #0b4f69;
+    --alternative-header: #094057;
+    --paragraph-text: #354045;
+    
+    --link-default: #1510b3;
+    --link-hover: #2e0d67;
+    --link-active: #110913;
+    --link-focus-color-1: #342eec;
+    --link-focus-color-2: #161469;
+    --link-selected-default: #100e4e;
+    --link-selected-background: #5c57f1cc;
+    --link-selected-hover: #9793fa;
+    --link-selected-hover-shadow: #100e4e;
+    --link-selected-active: #100e4e;
+    --link-selected-active-shadow: #b0ace6;
+
+    --highlighted-text-color: #feb6e1;
+    --highlighted-text-background: #360121cc;
+
+    --code-box-text: #010b0e;
+    --code-box-background: #dbe2e2;
+
+    --keyboard-input-text: #002b38;
+    --keyboard-input-background: #27a5d2;
+    --keyboard-input-shadow: #002b38;
+
+    /* src/components/global/windowsButton */
+    --windows-default: #0099cd; 
+    --windows-hover: #54caf2;
+    --windows-active: #65b8d1;
+    --windows-focused: #54caf2;
+    --windows-focused-outline: #0099cd;
+
+    --windows-background-default: #060638;
+    --windows-background-hover: #15159180;
+    --windows-background-active: #2727bd80;
+    --windows-background-focused: #15159180;
+  }
+
+  html, html body {
+    background: var(--primary-background) !important;
+    color-scheme: light !important;
+
+    *::selection {
+      background: var(--highlighted-text-background);
+      color: var(--highlighted-text-color);
+    }
+    
+    h1 { color: var(--primary-header); }
+    h2, h3, h4, h5, h6 { color: var(--alternative-header); }
+    p { color: var(--paragraph-text); }
+
+    a { color: var(--link-default); }
+    a:hover { color: var(--link-hover); }
+    a:active { color: var(--link-active); }
+    a:focus-visible { animation-name: defaultPulseLight; }
+    a::selection {
+      background: var(--link-selected-background);
+      text-decoration-color: var(--link-selected-default);
+      color: var(--link-selected-default);
+    }
+    a:hover::selection {
+      text-shadow: /* ..."-webkit-text-stroke" is not affected by the selection pseudo-element :( " */
+        var(--link-shadow-width) var(--link-shadow-width) var(--link-selected-hover-shadow),
+        var(--link-shadow-width-negative) var(--link-shadow-width-negative) var(--link-selected-hover-shadow),
+        var(--link-shadow-width) var(--link-shadow-width-negative) var(--link-selected-hover-shadow),
+        var(--link-shadow-width-negative) var(--link-shadow-width) var(--link-selected-hover-shadow),
+        0 var(--link-shadow-width) var(--link-selected-hover-shadow),
+        0 var(--link-shadow-width-negative) var(--link-selected-hover-shadow),
+        var(--link-shadow-width) 0 var(--link-selected-hover-shadow),
+        var(--link-shadow-width-negative) 0 var(--link-selected-hover-shadow);
+      color: var(--link-selected-hover);
+    }
+    a:active::selection {
+      text-shadow:
+        var(--link-shadow-width) var(--link-shadow-width) var(--link-selected-active-shadow),
+        var(--link-shadow-width-negative) var(--link-shadow-width-negative) var(--link-selected-active-shadow),
+        var(--link-shadow-width) var(--link-shadow-width-negative) var(--link-selected-active-shadow),
+        var(--link-shadow-width-negative) var(--link-shadow-width) var(--link-selected-active-shadow),
+        0 var(--link-shadow-width) var(--link-selected-active-shadow),
+        0 var(--link-shadow-width-negative) var(--link-selected-active-shadow),
+        var(--link-shadow-width) 0 var(--link-selected-active-shadow),
+        var(--link-shadow-width-negative) 0 var(--link-selected-active-shadow);
+      color: var(--link-selected-active);
+    }
+    a:focus-visible::selection { animation-name: highlightedPulseLight; }
+
+    code {
+      background: var(--code-box-background);
+      color: var(--code-box-text);
+    }
+
+    kbd {
+      background: var(--keyboard-input-background);
+      box-shadow: 0 .2rem 0 var(--keyboard-input-shadow);
+      color: var(--keyboard-input-text);
+    }
+
+  }
+
+}

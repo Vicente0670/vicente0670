@@ -27,13 +27,13 @@
         height: calc(100% - .125rem);
         width: calc(100% - .125rem);
         border-radius: .4375rem;
-        background: var(--windows-background-default-dark);
+        background: var(--windows-background-default);
         backdrop-filter: blur(10rem);
         transition: background-color .25s ease;
         z-index: 2;
         
         p {
-          color: var(--windows-default-dark);
+          color: var(--windows-default);
           transition: color .25s ease;
         }
         
@@ -68,11 +68,11 @@
     transition: outline-color 0s ease, transform .0625s ease;
 
     .link .rectangle {
-      background: var(--windows-background-hover-dark);
+      background: var(--windows-background-hover);
       transition: none;
 
       p {
-        color: var(--windows-hover-dark);
+        color: var(--windows-hover);
         transition: none;
       }
 
@@ -88,11 +88,11 @@
     transition: outline-color 0s ease, transform .0625s ease;
     
     .link .rectangle {
-      background: var(--windows-background-active-dark);
+      background: var(--windows-background-active);
       transition: none;
 
       p {
-        color: var(--windows-active-dark);
+        color: var(--windows-active);
         transition: none;
       }
 
@@ -103,17 +103,17 @@
 .buttonContainer:has(.root .link:focus-visible) {
 
   .root {
-    outline: .125rem solid var(--windows-focused-outline-dark);
+    outline: .125rem solid var(--windows-focused-outline);
     outline-offset: .375rem;
     transition: outline-color 0s ease, transform .0625s ease;
     animation: windowsOutlinePulse 1.5s ease infinite;
 
     .link .rectangle {
-      background: var(--windows-background-focused-dark);
+      background: var(--windows-background-focused);
       transition: none;
 
       p {
-        color: var(--windows-focused-dark);
+        color: var(--windows-focused);
         transition: none;
       }
 

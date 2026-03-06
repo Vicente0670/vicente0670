@@ -1,13 +1,14 @@
-import "./globals.css";
+import "@/app/globals.css";
 import { Metadata, Viewport } from "next";
 import { cookies } from "next/headers";
 import { Noto_Sans } from "next/font/google";
-import ThemeManager from "./api/clientTheme/themeManager";
+import Header from "@/components/global/header/header";
+import ThemeManager from "../api/clientTheme/themeManager";
 
 const defaultSchema = {
   title: "Vicente0670",
   description: "There's literally nothing here.",
-  favicon: "./favicon.ico",
+  favicon: "/favicon.ico",
   authors: [{ name: "Vicente0670", url: "https://vicente0670.com/" }],
   authorsShort: "Vicente0670",
   keywords: "vicente0670, vicente 67, youtube, website, vicente website, vicente game",
@@ -51,10 +52,21 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const system = globalCookies.get(systemCookie)?.value || "true";
 
   return (
-    <html lang="en" className={notoSans.className + " " + theme} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={notoSans.className + " " + theme}
+      data-scroll-behavior="smooth"
+      suppressHydrationWarning
+    >
+      <head>
+        <noscript>
+          <link href="/css/noscript-global.css" rel="stylesheet" />
+        </noscript>
+      </head>
       <body>
-        
-        <ThemeManager theme={theme} system={system} />
+        {/* <Header>
+          <ThemeManager theme={theme} system={system}/>
+        </Header> */}
         {children}
       </body>
     </html>

@@ -2,6 +2,7 @@
 
 import { useState, useRef, useCallback, useEffect } from "react";
 import { ThemeCookieManager } from "./themeCookieManager";
+import { themes } from "@/constants";
 
 enum SelectedIndex {
   SYSTEM = 0,
@@ -9,75 +10,93 @@ enum SelectedIndex {
   LIGHT
 }
 
-export default function ThemeManager(cookie: { theme: string, system: string }) {
+// Not satisfactory
+export default function ThemeManager(cookie: { theme?: string, system: string }) {
 
-  const [isEnabled, enabled] = useState(false);
-  const [theme, setTheme] = useState(cookie.theme);
-  const [system, isSystemTheme] = useState(cookie.system);
-  const clientForm = useRef<HTMLSelectElement>(null);
-  const cookieModified = useRef(false);
-  const newTheme = useRef<string | null>(null);
-  const newSystem = useRef<string | null>(null);
+  const [theme, setTheme] = useState<string | undefined>(cookie.theme);
+  const [system, isSystemTheme] = useState<string>(cookie.system);
+  const clientForm = useRef<HTMLSelectElement>(null!);
+  const cookieModified = useRef<boolean>(false);
+  const query = useRef<MediaQueryList>(null!);
+  const body = useRef<DOMTokenList>(null!);
+  const newTheme = useRef<string>("");
+  const newSystem = useRef<string>("");
 
-  const detectSystemThemeChange = useCallback(() => { // Yeah, I could've passed event parameters
-    if (
-      (!cookieModified.current && system === "true") ||
-      (cookieModified.current && newSystem.current === "true")
-    ) {
-      const body = document.documentElement.classList;
-      const isMatching = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  // must definitely fix for more themes
+  const checkTheme = useCallback((): string => {
+    return clientForm.current.value === "system" ? "true" :
+      (clientForm.current.value === "light" ? "light" : "dark");
+  }, []);
+
+  const setGlobalTheme = useCallback((): void => {
+
+  }, []);
+
+  const detectSystemThemeChange = useCallback((): void => {
+    // Yeah, I could've passed event parameters
+    // ... Why are you looking at me like that?
+    if (system === "true" || newSystem.current === "true") {
+      const isMatching = query.current.matches;
       if (isMatching) {
-        body.add("dark");
-        body.remove("light");
+        body.current.add("dark");
+        body.current.remove("light");
       }
       else {
-        body.add("light");
-        body.remove("dark");
+        body.current.add("light");
+        body.current.remove("dark");
       }
 
       const modifiedTheme = isMatching ? "dark" : "light";
-      setTheme(modifiedTheme);
       newTheme.current = modifiedTheme;
+      setTheme(modifiedTheme);
       ThemeCookieManager(modifiedTheme, "true");
     }
       
-  }, [cookieModified, setTheme, newTheme.current]);
+  },
+    [
+      cookieModified,
+      system,
+      setTheme
+    ]
+  );
 
-  const modifyTheme = useCallback(() => {
-    
-    cookieModified.current = true;
-    
-    const form = clientForm.current!;
-    const value = form.value === "system" ? "true" : "false";
-    let modifiedTheme;
-    isSystemTheme(value);
+  const modifyTheme = useCallback((): void => {
+    const value = clientForm.current.value === "system" ? "true" : clientForm.current.value;
     newSystem.current = value;
+    isSystemTheme(value);
+
+    let modifiedTheme;
 
     if (value != "true") {
-      modifiedTheme = form.value;
+      modifiedTheme = value;
 
-      const body = document.documentElement.classList;
       if (modifiedTheme === "dark") {
-        body.add("dark");
-        body.remove("light");
+        body.current.add("dark");
+        body.current.remove("light");
       }
       else if (modifiedTheme === "light") {
-        body.add("light");
-        body.remove("dark");
+        body.current.add("light");
+        body.current.remove("dark");
       }
     }
     else {
-      const media = window.matchMedia("(prefers-color-scheme: dark)");
-      modifiedTheme = media.matches ? "dark" : "light";
+      modifiedTheme = query.current.matches ? "dark" : "light";
       
-      const body = document.documentElement.classList;
+      // PART OF THE REFACTOR FOR EXTRA THEMES
+      // 
+      // for (const t in themeList) {
+      //   body.remove(t);
+      //   if (modifiedTheme === t)
+      //     body.add(t);
+      // }
+      // 
       if (modifiedTheme === "dark") {
-        body.add("dark");
-        body.remove("light");
+        body.current.add("dark");
+        body.current.remove("light");
       }
       else if (modifiedTheme === "light") {
-        body.add("light");
-        body.remove("dark");
+        body.current.add("light");
+        body.current.remove("dark");
       }
     }
     setTheme(modifiedTheme);
@@ -85,57 +104,75 @@ export default function ThemeManager(cookie: { theme: string, system: string }) 
 
     ThemeCookieManager(modifiedTheme, value);
 
-  }, [isSystemTheme, cookieModified, setTheme, newSystem, newTheme]);
+  },
+    [
+      setTheme,
+      isSystemTheme,
+      newTheme,
+      newSystem,
+      cookieModified
+    ]
+  );
 
-  useEffect(() => {
-    if (!isEnabled) {
+  useEffect((): void => {
+    const dom: DOMTokenList = document.documentElement.classList;
+    const media: MediaQueryList = window.matchMedia("(prefers-color-scheme: dark)");
+    body.current = dom;
+    query.current = media;
+    query.current.addEventListener("change", detectSystemThemeChange);
 
-      const media = window.matchMedia("(prefers-color-scheme: dark)");
-      media.addEventListener("change", detectSystemThemeChange);
-      if (cookie.theme == "unset" || (cookie.system != "true" && cookie.system != "false")) detectSystemThemeChange();
+    // in case the cookie somehow changes
+    // REFACTOR TO DETECT ALL THEMES
+    if (cookie.theme === "unset" || (cookie.system != "true" && cookie.system != "false"))
+      detectSystemThemeChange();
 
-      clientForm.current!.onchange = modifyTheme;
+    clientForm.current.onchange = modifyTheme;
 
-      function setSelectedValue() { // for future use
-        const form = clientForm.current!.children;
-        const attr = "selected";
-        if (system === "true") return form[SelectedIndex.SYSTEM].setAttribute(attr, attr);
-        else if (theme) {
-          return theme === "dark" ?
-          form[SelectedIndex.DARK].setAttribute(attr, attr) :
-          form[SelectedIndex.LIGHT].setAttribute(attr, attr);
-        }
-        else {
-          const themeRepair = media.matches ? "dark" : "light";
-          const isSystemRepair = "true";
-          return ThemeCookieManager(themeRepair, isSystemRepair);
-        }
+    function setSelectedValue() { // for future use
+      const form = clientForm.current.children;
+      const attr = "selected";
+      if (system === "true")
+        return form[SelectedIndex.SYSTEM].setAttribute(attr, attr);
+      else if (theme) {
+        return theme === "dark" ?
+        form[SelectedIndex.DARK].setAttribute(attr, attr) :
+        form[SelectedIndex.LIGHT].setAttribute(attr, attr);
       }
-
-      enabled(true);
+      else {
+        const themeRepair = query.current.matches ? "dark" : "light";
+        const isSystemRepair = "true";
+        return ThemeCookieManager(themeRepair, isSystemRepair);
+      }
     }
   },
     [
-      isEnabled,
-      enabled,
-      detectSystemThemeChange,
+      cookie.theme,
+      cookie.system,
+      theme,
+      system,
       modifyTheme,
+      detectSystemThemeChange,
     ]
   );
 
   return (
     <>
       <form>
-        <select name="clientTheme" id="clientTheme" defaultValue={
-          system === "true" ? "system" : (theme === "dark" ? "dark" : "light")
-        } ref={clientForm}>
+        <select
+          name="clientTheme"
+          id="clientTheme"
+          defaultValue={
+            system === "true" ? "system" : (theme === "dark" ? "dark" : "light")
+          } 
+          ref={clientForm}
+        >
           <option value="system">System</option>
           <option value="dark">Dark</option>
           <option value="light">Light</option>
         </select>
       </form>
-      <p>IS FROM SYSTEM: {system}</p>
-      <p>CURRENT THEME: {theme}</p>
+      {/* <p>IS FROM SYSTEM: {system}</p> */}
+      {/* <p>CURRENT THEME: {theme}</p> */}
     </>
   )
 

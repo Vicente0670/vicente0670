@@ -1,0 +1,49 @@
+.root {
+
+  .header {
+
+    margin: 3rem;
+    padding: 1rem 2rem;
+    width: auto;
+    background: var(--secondary-background);
+    outline: 1px solid var(--tertiary-background);
+    border-radius: 1rem;
+    text-align: center;
+
+  }
+
+  .postContainer {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+
+    .post {
+
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: 2rem;
+      background: var(--secondary-background);
+      outline: 1px solid var(--tertiary-background);
+      border-radius: 1rem;
+
+      /* .title {
+        
+      }
+
+      .content {
+        
+      }
+
+      .author {
+
+      } */
+
+    }
+
+  }
+
+}

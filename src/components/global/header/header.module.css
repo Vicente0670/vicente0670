@@ -1,0 +1,28 @@
+.root {
+
+  display: flex;
+  position: fixed;
+  margin: 0 .5rem;
+  height: 4rem;
+  width: calc(100% - 1rem);
+  background: black;
+  outline: 1px solid green;
+  border-radius: 0 0 .5rem .5rem;
+
+  .linkContainer {
+    background: orange;
+  }
+  
+  .searchContainer {
+    background: blue;
+  }
+  
+  .signInContainer {
+    background: violet;
+  }
+
+  .menuContainer {
+    background: red;
+  }
+
+}

@@ -1,7 +1,12 @@
 import WindowsButton from "@/components/global/windowsButton/windowsButton";
 import home from "./page.module.css";
+import { auth } from "@/auth";
 
-export default function Home() {
+export default async function Home() {
+
+  const session = await auth();
+  console.log(session);
+
   return (
     <>
       <h1>The dog does their thing</h1>
@@ -14,10 +19,6 @@ export default function Home() {
       <code>
         funny();
       </code>
-
-      <div id="test">
-        Sometimes
-      </div>
 
       <div className={home.intro1}>
         <p>testing things around and stuff</p>
@@ -33,9 +34,18 @@ export default function Home() {
       <p>Just don't press <kbd>J</kbd> after that</p>
       <a href="asd3">more link</a>
 
-      <WindowsButton href="/" />
-      <WindowsButton href="/" />
-      <WindowsButton href="/" />
+      <br />
+      <a href="/forum">This is a test of the forum page.</a>
+      <a href="/forum/new">make a new post here!!!!</a>
+      <br />
+
+      <div>
+        <p>{session ? `Welcome ${session.user?.name}` : "You are not named yet. SIGN IN to change that!"}</p>
+      </div>
+
+      <WindowsButton href="/signin" text="sign in page" />
+      <WindowsButton href="/signout" text="LEAVE" />
+      <WindowsButton href="/error" text="no guys" />
 
       <p>paragraph</p>
       <p>paragraph</p>

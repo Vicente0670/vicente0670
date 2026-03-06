@@ -3,7 +3,7 @@
 import button from "./local.module.css";
 import { useEffect, useState, useRef, useCallback } from "react";
 
-export default function WindowsButton({ href }: { href: string }) {
+export default function WindowsButton( input: { href: string, text: string }) {
 
   const [isEnabled, enabled] = useState(false);
   const container = useRef<HTMLDivElement>(null);
@@ -54,7 +54,7 @@ export default function WindowsButton({ href }: { href: string }) {
     const xThreshold = ((((e.pageX - rectangleDimensions.current.x) + 1) / rectangleDimensions.current.width) - .5) * 2;
     const yThreshold = -((((e.pageY - rectangleDimensions.current.y) + 1) / rectangleDimensions.current.height) - .5) * 2;
 
-    root.current!.style.transform = `rotate3d(${yThreshold}, ${xThreshold}, 0, 15deg)`;
+    root.current!.style.transform = `rotate3d(${yThreshold}, ${xThreshold}, 0, 10deg)`;
   }, []);
 
   const resetPerspective = useCallback(() => { root.current!.style.transform = "rotate3d(0, 0, 0, 0deg)"; }, []);
@@ -75,9 +75,9 @@ export default function WindowsButton({ href }: { href: string }) {
   return (
     <div className={button.buttonContainer} ref={container}>
       <div className={button.root} ref={root}>
-        <a className={button.link} href={href}>
+        <a className={button.link} href={input.href}>
           <div className={button.rectangle} ref={rectangle}>
-            <p>Goodbye Chat</p>
+            <p>{input.text}</p>
           </div>
           <div className={button.circle} id="circle" ref={circle} />
         </a>
